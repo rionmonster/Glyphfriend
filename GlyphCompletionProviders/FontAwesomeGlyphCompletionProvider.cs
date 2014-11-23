@@ -14,15 +14,16 @@ namespace Glyphfriend.GlyphCompletionProviders
     {
         // Define a default icon for any related classes that do not have glyphs
         private static BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/font-awesome.png", UriKind.RelativeOrAbsolute));
-        private static Regex _regex = new Regex(@"^font-awesome(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+        // Define a pattern to handle matching any related Font Awesome CSS files
+        private static Regex _cssFileExpression = new Regex(@"^font-awesome(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
         {
             if (sourceUri == null) { return null; }
 
             string filename = Path.GetFileName(sourceUri.ToString()).Trim();
-
-            if (_regex.IsMatch(filename))
+            if (_cssFileExpression.IsMatch(filename))
             {
                 try
                 {
@@ -31,6 +32,7 @@ namespace Glyphfriend.GlyphCompletionProviders
                 }
                 catch
                 {
+                    // If one was not available, serve the default icon
                     return _defaultIcon;
                 }
             }
