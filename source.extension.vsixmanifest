@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="950d05f7-bb25-43ce-b682-44b377b5307d" Version="1.0" Language="en-US" Publisher="Rion Williams" />
     <DisplayName>Glyphfriend</DisplayName>
-    <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to target many of the common glyph-based font libraries like Glyphicons, Font Awesome, Foundation and many others.</Description>
+    <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Glyphicons, Font Awesome, Foundation and many others.</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="14.0.22310" />
@@ -12,4 +12,8 @@
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" Version="[14.0,15.0)" />
   </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+  </Assets>
 </PackageManifest>
