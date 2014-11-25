@@ -16,7 +16,7 @@ namespace Glyphfriend.GlyphCompletionProviders
         private static BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/IonIcon/ionic-logo.png", UriKind.RelativeOrAbsolute));
 
         // Define a pattern to handle matching any related IonIcon CSS files
-        private static Regex _cssFileExpression = new Regex(@"^ionicons(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static Regex _cssFileExpression = new Regex(@"^ionic(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
         {

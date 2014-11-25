@@ -13,7 +13,7 @@ namespace Glyphfriend.GlyphCompletionProviders
     class FontAwesomeCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
     {
         // Define a default icon for any related classes that do not have glyphs
-        private static BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/font-awesome.png", UriKind.RelativeOrAbsolute));
+        private static BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/font-awesome-logo.png", UriKind.RelativeOrAbsolute));
 
         // Define a pattern to handle matching any related Font Awesome CSS files
         private static Regex _cssFileExpression = new Regex(@"^font-awesome(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
