@@ -13,11 +13,10 @@ namespace Glyphfriend.GlyphCompletionProviders
     class IcoMoonCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
     {
         // Define a default icon for any related classes that do not have glyphs
-        private static BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/font-awesome-logo.png", UriKind.RelativeOrAbsolute));
+        private static BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/IcoMoon/icomoon-logo.png", UriKind.RelativeOrAbsolute));
 
-        // TODO: Determine general pattern for IcoMoon (may be ~/IcoMoon/style.css)
-        // Define a pattern to handle matching any related IcoMoon CSS files
-        private static Regex _cssFileExpression = new Regex(@"(.*)icomoon/(.*)\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        // Define a pattern to handle matching any related IcoMoon CSS files (match any CSS files within an IcoMoon folder)
+        private static Regex _cssFileExpression = new Regex(@"(.*)IcoMoon/(.*)\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
         {
