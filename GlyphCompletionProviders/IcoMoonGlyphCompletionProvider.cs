@@ -29,7 +29,7 @@ namespace Glyphfriend.GlyphCompletionProviders
                 try
                 {
                     // Attempt to grab an icon for the current entry by trimming off the appropriate prefix for the entry (e.g. "icon-{entry}")
-                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/IcoMoon/{0}.png", entryName.Substring(5)), UriKind.RelativeOrAbsolute));
+                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/IcoMoon/{0}.png", entryName.Substring(5).ToLower()), UriKind.RelativeOrAbsolute));
                 }
                 catch
                 {
