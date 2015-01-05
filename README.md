@@ -19,7 +19,7 @@ You can [download and install Glyphfriend from the Visual Studio Gallery here](h
 simply add any of the applicable libraries above to your project. Glyphfriend should detect all of the appropriate classes within the CSS files and apply the appropriate glyphs within the Intellisense
 drop-down list when you start typing :
 
-![Glyphfriend in Action](https://rionscode.files.wordpress.com/2015/01/glyphfriend.gif)
+![Glyphfriend in Action](https://rionscode.files.wordpress.com/2015/01/gif-friend.gif)
 ## Missing Something?
 
 Pull Requests are openly accepted and encouraged. 
