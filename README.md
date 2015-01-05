@@ -20,7 +20,6 @@ simply add any of the applicable libraries above to your project. Glyphfriend sh
 drop-down list when you start typing :
 
 ![Glyphfriend in Action](https://rionscode.files.wordpress.com/2015/01/glyphfriend.gif)
-
 ## Missing Something?
 
 Pull Requests are openly accepted and encouraged. 
