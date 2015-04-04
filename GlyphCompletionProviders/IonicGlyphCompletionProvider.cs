@@ -14,21 +14,21 @@ using TheArtOfDev.HtmlRenderer.WinForms;
 namespace Glyphfriend.GlyphCompletionProviders
 {
 	[Export(typeof(ICssCompletionEntryGlyphProvider))]
-	class FoundationGlyphCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
+	class IonicGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
 	{
 		// Store each of the byte[] data for each font for future calls (so that the fonts only have to be generated once)
 		private static Dictionary<string, BitmapFrame> _fontMappings;
 
 		// Store the default glyph for this particular library
-		private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/Foundation/default.png", UriKind.RelativeOrAbsolute));
+		private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/Ionic/default.png", UriKind.RelativeOrAbsolute));
 
 		// Define a Regular Expression check for matches from this library
-		private static Regex _regex = new Regex(@"^foundation-icons(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+		private static Regex _regex = new Regex(@"^ionicons(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
-		public FoundationGlyphCompletionEntryGlyphProvider()
+		public IonicGlyphCompletionProvider()
 		{
 			// Initialize the Font Awesome icons for the renderer
-			InitializeFoundationFonts(GlyphfriendPackage.CurrentSolutionPath);
+			InitializeFonts(GlyphfriendPackage.CurrentSolutionPath);
 			// Find any CSS files associated to the font-awesome library and build the necessary mappings
 			ParseAndGenerateMappings(GlyphfriendPackage.CurrentSolutionPath);
 		}
@@ -58,13 +58,13 @@ namespace Glyphfriend.GlyphCompletionProviders
 			return null;
 		}
 
-		private void InitializeFoundationFonts(string directory)
+		private void InitializeFonts(string directory)
 		{
 			// Instantiate all Font Awesome True Type fonts that are available (for the renderer)
 			var fonts = new PrivateFontCollection();
 
 			// Get the appropriate fonts that are present within this Project
-			foreach (var fontFamily in Directory.GetFiles(directory, "foundation-icons.ttf", SearchOption.AllDirectories))
+			foreach (var fontFamily in Directory.GetFiles(directory, "ionicons.ttf", SearchOption.AllDirectories))
 			{
 				fonts.AddFontFile(fontFamily);
 			}
@@ -79,7 +79,7 @@ namespace Glyphfriend.GlyphCompletionProviders
 		private void ParseAndGenerateMappings(string directory)
 		{
 			// Find the appropriate font-awesome CSS file
-			var path = Directory.EnumerateFiles(directory, "*.css", SearchOption.AllDirectories).Where(f => Regex.IsMatch(f, @"foundation-icons(\.min)?\.css$")).FirstOrDefault();
+			var path = Directory.EnumerateFiles(directory, "*.css", SearchOption.AllDirectories).Where(f => Regex.IsMatch(f, @"ionicons(\.min)?\.css$")).FirstOrDefault();
 
 			// Use the file if it was found
 			if (!String.IsNullOrEmpty(path))
@@ -90,7 +90,7 @@ namespace Glyphfriend.GlyphCompletionProviders
 				// Read only the CSS Classes (only those with :before and beginning with .fa-)
 				var classes = Regex.Matches(css, @"\.[-]?([_a-zA-Z][_a-zA-Z0-9-]*):before|[^\0-\177]*\\[0-9a-f]{1,6}(\r\n[ \n\r\t\f])?|\\[^\n\r\f0-9a-f]*")
 								   .Cast<Match>()
-								   .Where(m => m.Value.StartsWith(".fi-") && m.Value.Contains("content:"))
+								   .Where(m => m.Value.StartsWith(".ion-") && m.Value.Contains("content:"))
 								   .Distinct();
 
 				// Create a dictionary that maps class names to their respective unicode values
@@ -119,7 +119,7 @@ namespace Glyphfriend.GlyphCompletionProviders
 					if (!_fontMappings.ContainsKey(mapping.Key))
 					{
 						// Generate an HTML Snippet to properly render the Glyph
-						var html = String.Format("<span style='font-family: \"foundation-icons\"; display:block;'>{0}</span>", mapping.Value);
+						var html = String.Format("<span style='font-family: \"Ionicons\"; display:block;'>{0}</span>", mapping.Value);
 						// Build a glyphframe
 						var frame = ImageHelper.GenerateGlyph(html);
 						// Store it within the Dictionary
