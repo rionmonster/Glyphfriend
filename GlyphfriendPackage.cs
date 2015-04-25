@@ -12,7 +12,7 @@ namespace Glyphfriend
 	public sealed class GlyphfriendPackage : Package
 	{
 		// Store the current solution path
-		private static string _currentSolutionPath; 
+		private static string _currentSolutionPath;
 
 		internal static string CurrentSolutionPath
 		{
@@ -25,6 +25,7 @@ namespace Glyphfriend
 					{
 						var tempPath = dte2.Solution.FullName;
 						_currentSolutionPath = Path.Combine(new Uri(tempPath).Segments.Take(new Uri(tempPath).Segments.Count() - 1).ToArray());
+                        _currentSolutionPath = _currentSolutionPath.Replace("%20", " "); // Handles space characters
 					}
 				}
 				return _currentSolutionPath;

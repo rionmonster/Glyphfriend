@@ -9,12 +9,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Glyphfriend.Helpers;
 using Microsoft.CSS.Editor.Completion;
+using Microsoft.VisualStudio.Utilities;
 using TheArtOfDev.HtmlRenderer.WinForms;
 
 namespace Glyphfriend.GlyphCompletionProviders
 {
 	[Export(typeof(ICssCompletionEntryGlyphProvider))]
-	class FoundationGlyphCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
+    [Name("Glyphfriend Foundation")]
+    [Order(Before = "Web Essentials Foundation")]
+    class FoundationGlyphCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
 	{
 		// Store each of the byte[] data for each font for future calls (so that the fonts only have to be generated once)
 		private static Dictionary<string, BitmapFrame> _fontMappings;
@@ -84,7 +87,7 @@ namespace Glyphfriend.GlyphCompletionProviders
 			// Use the file if it was found
 			if (!String.IsNullOrEmpty(path))
 			{
-				// Read in the CSS from the file 
+				// Read in the CSS from the file
 				var css = File.ReadAllText(path);
 
 				// Read only the CSS Classes (only those with :before and beginning with .fa-)
@@ -96,8 +99,8 @@ namespace Glyphfriend.GlyphCompletionProviders
 				// Create a dictionary that maps class names to their respective unicode values
 				Dictionary<string, string> mappings = new Dictionary<string, string>();
 
-				// Using those classes, grab the content value that appears within each of them, which will map 
-				// the unicode values to the appropriate class 
+				// Using those classes, grab the content value that appears within each of them, which will map
+				// the unicode values to the appropriate class
 				foreach (var cssClass in classes)
 				{
 					// Find the cooresponding code for each class
