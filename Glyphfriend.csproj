@@ -102,11 +102,11 @@
     <Resource Include="Glyphs\IcoMoon\_default.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Glyphs\Bootstrap\_default.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Glyphs\Ionic\alert-circled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

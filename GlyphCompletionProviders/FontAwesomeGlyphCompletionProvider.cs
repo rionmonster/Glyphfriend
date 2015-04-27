@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Drawing.Text;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -12,7 +9,6 @@ using Microsoft.VisualStudio.Utilities;
 
 namespace Glyphfriend.GlyphCompletionProviders
 {
-
     [Export(typeof(ICssCompletionEntryGlyphProvider))]
     [Name("Glyphfriend Font Awesome")]
 	class FontAwesomeGlyphCompletionProvider : ICssCompletionEntryGlyphProvider

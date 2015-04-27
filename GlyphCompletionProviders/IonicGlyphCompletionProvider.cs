@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Drawing.Text;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.CSS.Editor.Completion;
+using Microsoft.VisualStudio.Utilities;
 
 namespace Glyphfriend.GlyphCompletionProviders
 {
 	[Export(typeof(ICssCompletionEntryGlyphProvider))]
-	class IonicGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
+    [Name("Glyphfriend Ionic")]
+    class IonicGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
 	{
 		// Store the default glyph for this particular library
 		private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/Ionic/_default.png", UriKind.RelativeOrAbsolute));

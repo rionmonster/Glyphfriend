@@ -15,7 +15,7 @@ namespace Glyphfriend.GlyphCompletionProviders
     class BootstrapGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
     {
         // Define a Regular Expression check for matches from this library
-        private static Regex _regex = new Regex(@"^bootstrap(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static Regex _regex = new Regex(@"^bootstrap(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
         {
