@@ -35,7 +35,7 @@ namespace Glyphfriend.GlyphCompletionProviders
                 try
                 {
                     // Attempt to grab an icon for the current entry
-                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/{0}.png", entryName.Substring(10)), UriKind.RelativeOrAbsolute));
+                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/{0}.png", entryName.Substring(3)), UriKind.RelativeOrAbsolute));
                 }
                 catch
                 {
