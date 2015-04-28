@@ -26,15 +26,10 @@ namespace Glyphfriend.GlyphCompletionProviders
             // Determine if this matches our filename
             if (_regex.IsMatch(filename))
             {
-                try
+                // If the glyph exists, serve it
+                if(GlyphfriendPackage.Glyphs.ContainsKey(entryName))
                 {
-                    // Attempt to grab an icon for the current entry
-                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/Bootstrap/{0}.png", entryName.Substring(10)), UriKind.RelativeOrAbsolute));
-                }
-                catch
-                {
-                    // If one was not available, serve the default icon (null as the default VS intellisense will take over)
-                    return null;
+                    return GlyphfriendPackage.Glyphs[entryName];
                 }
             }
             
