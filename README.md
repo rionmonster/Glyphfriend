@@ -19,6 +19,10 @@ simply add any of the applicable libraries above to your project. Glyphfriend sh
 drop-down list when you start typing :
 
 ![Glyphfriend in Action](https://rionscode.files.wordpress.com/2015/01/gif-friend.gif)
+
+If you want to see Glyphfriend in action and don't feel like building your own project and referencing these libraries, you can check out the [Glyphfriend Testing repository](https://github.com/Rionmonster/Glyphfriend.Testing),
+which should have the latest version of all of the currently supported libraries.
+
 ## Missing Something?
 
 Pull Requests are openly accepted and encouraged. 
