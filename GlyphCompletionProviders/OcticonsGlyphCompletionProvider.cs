@@ -15,10 +15,10 @@ namespace Glyphfriend.GlyphCompletionProviders
 	class GlyphiconsGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
 	{
 		// Store the default glyph for this particular library
-		private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/_default.png", UriKind.RelativeOrAbsolute));
+		private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/Octicons/_default.png", UriKind.RelativeOrAbsolute));
 		
 		// Define a Regular Expression check for matches from this library
-		private static Regex _regex = new Regex(@"^font(-?)awesome(-.*)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+		private static Regex _regex = new Regex(@"^octicons(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
 		{
@@ -32,7 +32,7 @@ namespace Glyphfriend.GlyphCompletionProviders
                 try
                 {
                     // Attempt to grab an icon for the current entry
-                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/FontAwesome/{0}.png", entryName.Substring(8)), UriKind.RelativeOrAbsolute));
+                    return BitmapFrame.Create(new Uri(String.Format("pack://application:,,,/Glyphfriend;component/Glyphs/Octicons/{0}.png", entryName.Substring(8)), UriKind.RelativeOrAbsolute));
                 }
                 catch
                 {
