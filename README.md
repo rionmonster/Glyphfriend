@@ -10,6 +10,7 @@ Glyphfriend is a Visual Studio 2015 extension to enhance the existing Intellisen
 * [Foundation](http://foundation.zurb.com/)
 * [Ionicons](http://ionicons.com/) 
 * [IcoMoon](https://icomoon.io/)
+* [Octicons](https://octicons.github.com/)
 
 ## Getting Started
 
@@ -22,7 +23,7 @@ drop-down list when you start typing :
 
 Pull Requests are openly accepted and encouraged. 
 
-The libraries that were chosen were just some of the more common ones that I had come across, but I am sure that I left quite a few out. If you find that one of your favorites is missing, you can either report it within the Issues area or 
+The libraries that were chosen were just some of the more common ones that I had come across, but I am sure that I left quite a few out. If you find that one of your favorites is missing, you can either report it within the [Issues](https://github.com/Rionmonster/Glyphfriend/issues) area or 
 just clone this repository, make a fork and add your changes (and then just make a pull request when you are all done).
 
 ## Thanks
