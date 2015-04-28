@@ -14,7 +14,7 @@ namespace Glyphfriend.GlyphCompletionProviders
     class IcoMoonGlyphCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
     {
         // Store the default glyph for this particular library
-        private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/Foundation/_default.png", UriKind.RelativeOrAbsolute));
+        private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/IcoMoon/_default.png", UriKind.RelativeOrAbsolute));
 
         // Define a Regular Expression check for matches from this library
         private static Regex _regex = new Regex(@"^(style|icomoon)(\-free)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);

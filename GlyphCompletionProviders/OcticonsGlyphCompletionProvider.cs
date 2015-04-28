@@ -11,8 +11,8 @@ namespace Glyphfriend.GlyphCompletionProviders
 {
 
     [Export(typeof(ICssCompletionEntryGlyphProvider))]
-    [Name("Glyphfriend Glyphicons")]
-    class GlyphiconsGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
+    [Name("Glyphfriend Octicons")]
+    class OcticonsGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
     {
         // Store the default glyph for this particular library
         private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/Octicons/_default.png", UriKind.RelativeOrAbsolute));
