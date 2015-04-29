@@ -13,9 +13,6 @@ namespace Glyphfriend.GlyphCompletionProviders
     [Name("Glyphfriend Icomoon")]
     class IcoMoonGlyphCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
     {
-        // Store the default glyph for this particular library
-        private static BitmapFrame _defaultGlyph = BitmapFrame.Create(new Uri("pack://application:,,,/Glyphfriend;component/Glyphs/IcoMoon/_default.png", UriKind.RelativeOrAbsolute));
-
         // Define a Regular Expression check for matches from this library
         private static Regex _regex = new Regex(@"^(style|icomoon)(\-free)?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
@@ -28,13 +25,11 @@ namespace Glyphfriend.GlyphCompletionProviders
             // Determine if this matches our filename
             if (_regex.IsMatch(filename))
             {
-                // If the glyph exists, serve it
                 if (GlyphfriendPackage.Glyphs.ContainsKey(entryName))
                 {
                     return GlyphfriendPackage.Glyphs[entryName];
                 }
-                // If one was not available, serve the default icon
-                return _defaultGlyph;
+                return GlyphfriendPackage.Glyphs["icon-default"];
             }
 
             return null;

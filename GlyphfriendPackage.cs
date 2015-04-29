@@ -26,7 +26,12 @@ namespace Glyphfriend
             {
                 _glyphs = new Dictionary<string, ImageSource>();
             }
-            foreach(var glyph in new DirectoryInfo("../../Glyphs").EnumerateFiles("*.png", SearchOption.AllDirectories))
+
+            // Resolve the direcotry for all Glyphs stored as content
+            string assembly = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var glyphDirectory = Path.Combine(Path.GetDirectoryName(assembly), "Glyphs");
+
+            foreach (var glyph in new DirectoryInfo(glyphDirectory).EnumerateFiles("*.png", SearchOption.AllDirectories))
             {
                 // Generate the Glyph
                 try
