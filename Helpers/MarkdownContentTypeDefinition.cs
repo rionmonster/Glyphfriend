@@ -8,16 +8,10 @@ using System.Threading.Tasks;
 
 namespace Glyphfriend.Helpers
 {
-    /// <summary>
-    /// Exports the Markdown content type and file extension
-    /// </summary>
     public class MarkdownContentTypeDefinition
     {
         public const string MarkdownContentType = "markdown";
 
-        /// <summary>
-        /// Exports the Markdown HTML content type
-        /// </summary>
         [Export(typeof(ContentTypeDefinition))]
         [Name(MarkdownContentType)]
         [BaseDefinition("htmlx")]

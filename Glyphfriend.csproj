@@ -54,7 +54,6 @@
     <Compile Include="GlyphCompletionProviders\IonicGlyphCompletionProvider.cs" />
     <Compile Include="GlyphCompletionProviders\FontAwesomeGlyphCompletionProvider.cs" />
     <Compile Include="GlyphfriendPackage.cs" />
-    <Compile Include="Helpers\CompletionController.cs" />
     <Compile Include="Helpers\MarkdownContentTypeDefinition.cs" />
     <Compile Include="Helpers\MarkdownTextViewListener.cs" />
     <Compile Include="Helpers\HtmlTextViewListener.cs" />

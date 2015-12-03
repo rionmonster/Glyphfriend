@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text.Classification;
+using Microsoft.VisualStudio.Text.Operations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,89 +14,78 @@ namespace Glyphfriend.EmojiCompletionProviders
     {
         private readonly ITextBuffer _buffer;
         private readonly List<Completion> _emojis;
+        private ITextStructureNavigator _textStructureNavigator;
         private bool _disposed = false;
 
-        public EmojiCompletionSource(ITextBuffer buffer)
+        public EmojiCompletionSource(ITextBuffer buffer,ITextStructureNavigator textStructureNavigator)
         {
             _buffer = buffer;
+            _textStructureNavigator = textStructureNavigator;
+            // Build a collection of Emojis to handle 
             _emojis = GlyphfriendPackage.Emojis
                                         .Select(e => EmojiCompletion(e.Key, e.Value))
                                         .ToList();
         }
 
-        private static Completion EmojiCompletion(string emoji, ImageSource emojiImage)
-        {
-            // Map a completion object for each Emoji to the appropriate image
-            var formattedEmoji = $":{emoji}:";
-            return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage, formattedEmoji);
-        }
-
         public void AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
         {
-            // If the completion source is already disposed, throw an exception
+            // If this session has already been disposed, ignore it
             if (_disposed)
             {
-                throw new ObjectDisposedException("");
+                return;
             }
+               
+            // Build a snapshot off the current buffer along with a trigger point
+            ITextSnapshot snapshot = session.TextView.TextBuffer.CurrentSnapshot;
+            SnapshotPoint? triggerPoint = session.GetTriggerPoint(snapshot);
 
-            // See what the current buffer looks like
-            ITextSnapshot snapshot = _buffer.CurrentSnapshot;
-            var triggerPoint = (SnapshotPoint)session.GetTriggerPoint(snapshot);
-            // If we can't resolve the current snapshot, ignore it
-            if (triggerPoint == null)
+            // Ensuer the trigger point is valid
+            if (triggerPoint == null || !triggerPoint.HasValue || triggerPoint.Value.Position == 0)
             {
                 return;
             }
-
-            // Take a look at the current line to see if an Emoji exists    
-            var line = triggerPoint.GetContainingLine();
-            SnapshotPoint start = triggerPoint;
-
-            // 
-            var emojiFound = false;
-            // Go through the line
-            while (start > line.Start)
-            {
-                // Set our current character either 
-                var character = start == snapshot.Length ? '\n' : start.GetChar();
-
-                // We know this is the starting character for an Emoji, so flag it
-                if (character == ':')
-                {
-                    emojiFound = true;
-                    break;
-                }
-
-                // Check if the previous character is an Emoji character
-                if (!IsEmojiCharacter((start - 1).GetChar()))
-                {
-                    break;
-                }
-
-                start -= 1;
-            }
-
-            // If no Emoji was found, ignore
-            if (!emojiFound)
+                
+            // Build a span based off of the current
+            ITrackingSpan tracking = FindTokenSpanAtPosition(session);
+            // If we couldn't build a span, ignore this Session
+            if (tracking == null)
             {
                 return;
             }
-
-            // Define the Emojis that are applicable for the current span of Emoji characters
-            var applicableTo = snapshot.CreateTrackingSpan(new SnapshotSpan(start, triggerPoint), SpanTrackingMode.EdgeInclusive);
-            // Compare the current snapshot to the set of available Emojis and build a completion set
-            // to display the available options
-            completionSets.Add(new CompletionSet("All", "All", applicableTo, _emojis, Enumerable.Empty<Completion>()));
-        }
-
-        private bool IsEmojiCharacter(char character)
-        {
-            return Regex.IsMatch(Convert.ToString(character), @"[\w\-\+\:]");
+                
+            // Add all of the emojis to the available completions
+            List<Completion> completions = _emojis;
+            if (completions.Any())
+            {
+                // Explicitly remove the HTML completion (as this is for Markdown files)
+                completionSets.Clear();
+                // Add the Emojis to the completion handler (passing along the current tracking span)
+                completionSets.Add(new CompletionSet("Emojis", "Emojis", tracking, completions.OrderBy(c => c.DisplayText), Enumerable.Empty<Completion>()));
+            }
         }
 
         public void Dispose()
         {
             _disposed = true;
         }
+
+        private static Completion EmojiCompletion(string emoji, ImageSource emojiImage)
+        {
+            // Map a completion object for each Emoji to the appropriate image
+            var formattedEmoji = $":{emoji}:";
+            // Build a completion for each Emoji
+            return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage, formattedEmoji);
+        }
+
+        private ITrackingSpan FindTokenSpanAtPosition(ICompletionSession session)
+        {
+            // Look for the nearly start of line or space prior to the starting character and 
+            // examine it
+            SnapshotPoint currentPoint = session.TextView.Caret.Position.BufferPosition - 1;
+            TextExtent extent = _textStructureNavigator.GetExtentOfWord(currentPoint);
+            return currentPoint.Snapshot.CreateTrackingSpan(extent.Span, SpanTrackingMode.EdgeInclusive);
+        }
+
+        
     }
 }
