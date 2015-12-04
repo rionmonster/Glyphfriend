@@ -7,7 +7,7 @@
     <License>LICENSE.txt</License>
     <Icon>Glyphfriend.png</Icon>
     <PreviewImage>Glyphfriend.png</PreviewImage>
-    <Tags>visual studio intellisense, glyph intellisense, font awesome, glyphicons, icon intellisense, foundation, icomoon, ionicons</Tags>
+    <Tags>visual studio intellisense, glyph intellisense, font awesome, glyphicons, icon intellisense, foundation, icomoon, ionicons, emojis, emoticons</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Version="[14.0,15.0)" Id="Microsoft.VisualStudio.Enterprise" />
