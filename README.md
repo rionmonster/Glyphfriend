@@ -1,6 +1,8 @@
 ![Glyphfriend](https://rionscode.files.wordpress.com/2015/01/glyphfriend-logo-e1420492452632.png)
 ===========
 
+[![Build status](https://ci.appveyor.com/api/projects/status/i5vgnjkxwjq8shh3?svg=true)](https://ci.appveyor.com/project/Rionmonster/glyphfriend)
+
 Glyphfriend is a Visual Studio 2015 extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Foundation, IonIcons and more.
 
 ## Supported Glyphs and Libraries
