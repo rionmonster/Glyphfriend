@@ -65,9 +65,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSS.Editor, Version=14.0.0.0">
+    <Reference Include="Microsoft.CSS.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(DevEnvDir)\Extensions\Microsoft\Web Tools\Editors\Microsoft.CSS.Editor.dll</HintPath>
+      <HintPath>Dependencies\Microsoft.CSS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSS.Editor, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Microsoft.CSS.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Editor, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -91,6 +95,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dependencies\Microsoft.CSS.Core.dll" />
+    <Content Include="Dependencies\Microsoft.Html.Core.dll" />
+    <Content Include="Dependencies\Microsoft.Html.Editor.dll" />
+    <Content Include="Dependencies\Microsoft.Web.Editor.dll" />
     <Content Include="Emojis\+1.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
