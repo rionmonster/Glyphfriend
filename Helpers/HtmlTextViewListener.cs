@@ -20,6 +20,7 @@ namespace Glyphfriend.Helpers
             {
                 GlyphfriendPackage.LoadGlyphs();
             }
+
         }
     }
 }
