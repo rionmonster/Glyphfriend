@@ -3247,6 +3247,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-arrow-all.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-arrow-bottom-drop-circle.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-arrow-bottom-left.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -5221,6 +5224,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-google-circles-extended.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-google-circles-group.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-google-circles-invite.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -5288,6 +5294,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-guitar-pick.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-guitar.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-hand-pointing-right.png">
@@ -7586,6 +7595,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-worker.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-wrap.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-wrench.png">
