@@ -3115,6 +3115,12 @@
     <Content Include="Glyphs\MaterialDesign\mdi-account-search.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-account-star-variant.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-account-star.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-account-switch.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -3547,6 +3553,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-bio.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-biohazard.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-bitbucket.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -3691,6 +3700,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-box.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-briefcase-check.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-briefcase-checked.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -3773,6 +3785,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-calendar-clock.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-calendar-multiple-check.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-calendar-multiple.png">
@@ -3881,6 +3896,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-cart.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-case-sensitive-alt.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-cash-100.png">
@@ -4090,6 +4108,12 @@
     <Content Include="Glyphs\MaterialDesign\mdi-clock.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-close-box-outline.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-close-box.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-close-circle-outline.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -4217,6 +4241,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-comment-multipe-outline.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-comment-multiple-outline.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-comment-outline.png">
@@ -4564,6 +4591,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-email-open.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-email-outline.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-email-secure.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -4649,6 +4679,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-facebook-box.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-facebook-messenger.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-facebook.png">
@@ -4790,6 +4823,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-fire.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-firefox.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-fish.png">
@@ -5059,6 +5095,18 @@
     <Content Include="Glyphs\MaterialDesign\mdi-format-underline.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-format-wrap-inline.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-format-wrap-square.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-format-wrap-tight.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-format-wrap-top-bottom.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-forum.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -5129,6 +5177,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-github-box.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-github-circle.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-github.png">
@@ -5230,6 +5281,15 @@
     <Content Include="Glyphs\MaterialDesign\mdi-group.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-guitar-electric.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-guitar-pick-outline.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-guitar-pick.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-hand-pointing-right.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -5246,6 +5306,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-headphones-dots.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-headphones-settings.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-headphones.png">
@@ -5320,6 +5383,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-houzz-box.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-houzz.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-human-child.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -5374,7 +5440,7 @@
     <Content Include="Glyphs\MaterialDesign\mdi-image-filter.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Glyphs\MaterialDesign\mdi-image-mutliple.png">
+    <Content Include="Glyphs\MaterialDesign\mdi-image-multiple.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-image.png">
@@ -5590,6 +5656,12 @@
     <Content Include="Glyphs\MaterialDesign\mdi-linux.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-lock-open-outline.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-lock-open.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-lock-outline.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -5666,6 +5738,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-material-ui.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-math-compass.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-maxcdn.png">
@@ -7297,6 +7372,9 @@
     <Content Include="Glyphs\MaterialDesign\mdi-view-day.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-view-grid.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-view-headline.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -7553,6 +7631,51 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MaterialDesign\mdi-zip-box.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-motorbike.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-nutrition.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-phone-settings.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-regex.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-rss.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-selection.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-settings-box.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-settings.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-target.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-ticket.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-toggle-switch.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-trophy-award.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-trophy-variant.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-trophy.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MaterialDesign\mdi-vibrate.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-default.png">
