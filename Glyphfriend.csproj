@@ -8927,6 +8927,15 @@
     <Content Include="Glyphs\MaterialDesign\mdi-vibrate.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-beaker.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-bell.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-bold.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-default.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -15902,6 +15911,9 @@
     <Content Include="Glyphs\Octicons\octicon-database.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-desktop-download.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-device-camera-video.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -16040,6 +16052,9 @@
     <Content Include="Glyphs\Octicons\octicon-issue-reopened.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-italic.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-jersey.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -16083,6 +16098,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-lock.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-logo-gist.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-logo-github.png">
@@ -16244,6 +16262,9 @@
     <Content Include="Glyphs\Octicons\octicon-settings.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-shield.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-sign-in.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -16271,10 +16292,16 @@
     <Content Include="Glyphs\Octicons\octicon-tag.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-tasklist.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-telescope.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-terminal.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-text-size.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-three-bars.png">
@@ -16311,6 +16338,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-versions.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-watch.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-x.png">
