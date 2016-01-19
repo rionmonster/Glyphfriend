@@ -15,6 +15,8 @@ namespace Glyphfriend.GlyphCompletionProviders
     {
         // Define a Regular Expression check for matches from this library
         private static Regex _regex = new Regex(@"^entypo?(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        // Store the Glyph folder related to this library
+        private static string _lib = "Entypo";
 
         public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
         {
@@ -23,15 +25,14 @@ namespace Glyphfriend.GlyphCompletionProviders
             // Get the file path of the source being used
             string filename = Path.GetFileName(sourceUri.ToString()).Trim();
             // Determine if this matches our filename
-            if (_regex.IsMatch(filename))
+            if (_regex.IsMatch(filename) && GlyphfriendPackage.Glyphs.ContainsKey(_lib))
             {
-                if (GlyphfriendPackage.Glyphs.ContainsKey(entryName))
+                if (GlyphfriendPackage.Glyphs[_lib].ContainsKey(entryName))
                 {
-                    return GlyphfriendPackage.Glyphs[entryName];
+                    return GlyphfriendPackage.Glyphs[_lib][entryName];
                 }
-                return GlyphfriendPackage.Glyphs["icon-default"];
+                return GlyphfriendPackage.Glyphs[_lib]["icon-default"];
             }
-
             return null;
         }
     }
