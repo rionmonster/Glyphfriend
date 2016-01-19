@@ -8,10 +8,12 @@ Glyphfriend is a Visual Studio 2015 extension to enhance the existing Intellisen
 ## Supported Glyphs and Libraries
 
 * [Bootstrap Glyphicons](http://getbootstrap.com/components/#glyphicons)
+* [Entypo](http://www.entypo.com)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Foundation](http://foundation.zurb.com/)
 * [Ionicons](http://ionicons.com/) 
 * [IcoMoon](https://icomoon.io/)
+* [Material Design](https://materialdesignicons.com/)
 * [Octicons](https://octicons.github.com/)
 
 Glyphfriend now also supports [Emoji emoticons](http://www.emoji-cheat-sheet.com/) within Markdown files, for those of you that enjoy using Visual Studio as a Markdown 
