@@ -15,7 +15,7 @@ namespace Glyphfriend.GlyphCompletionProviders
             Library = "MetroUI";
             // Define the pattern used to match with the CSS file that defines the glyphs
             GlyphCSSDefinitionExpression = new Regex(@"^metro-icons(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-            // TODO: Define an optional default icon name to display if a glyph is unavailable
+            // Define an optional default icon name to display if a glyph is unavailable
             DefaultIconClass = "mif-default";
         }
     }

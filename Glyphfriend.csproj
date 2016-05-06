@@ -9322,6 +9322,9 @@
     <Content Include="Glyphs\MetroUI\mif-database.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\MetroUI\mif-default.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\MetroUI\mif-delicious.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -9335,6 +9338,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MetroUI\mif-dice.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\MetroUI\mif-digg.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\MetroUI\mif-directions-bike.png">
