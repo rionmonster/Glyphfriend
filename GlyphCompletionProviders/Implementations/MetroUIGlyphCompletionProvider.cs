@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace Glyphfriend.GlyphCompletionProviders
 {
     [Export(typeof(ICssCompletionEntryGlyphProvider))]
-    [Name("MetroUI Font")]
+    [Name("Glyphfriend MetroUI")]
     class MetroUIGlyphCompletionProvider : BaseGlyphfriendProvider
     {
         public MetroUIGlyphCompletionProvider()
