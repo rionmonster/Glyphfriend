@@ -11,7 +11,7 @@ namespace Glyphfriend.GlyphCompletionProviders
         /// <summary>
         /// A Regular Expression representing the file that is used to define the glyphs (e.g. @"^font(-?)awesome(-.*)?(\.min)?\.css$" for Font Awesome)
         /// </summary>
-        protected static Regex GlyphCSSDefinitionExpression { get; set; }
+        protected Regex GlyphCSSDefinitionExpression { get; set; }
         /// <summary>
         /// The name of the Library (e.g. Font Awesome)
         /// </summary>
