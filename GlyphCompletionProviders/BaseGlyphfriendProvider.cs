@@ -23,21 +23,21 @@ namespace Glyphfriend.GlyphCompletionProviders
 
         public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
         {
-            // If the source Uri for the image is null, ignore it
-            if (sourceUri == null) { return null; }
+            // If the source is null or no glyphs have been loaded, ignore the request
+            if (sourceUri == null || GlyphfriendPackage.Glyphs == null) { return null; }
             // Get the file path of the source being used
             var filename = Path.GetFileName(Convert.ToString(sourceUri));
             // Determine if the file matches this provider and we have the library loaded
             if (GlyphCSSDefinitionExpression.IsMatch(filename.Trim()) && GlyphfriendPackage.Glyphs.ContainsKey(Library))
             {
                 // Since the library is loaded, determine if the Glyph exists
-                if (GlyphfriendPackage.Glyphs[Library].ContainsKey(entryName))
+                if (entryName != null && GlyphfriendPackage.Glyphs[Library].ContainsKey(entryName))
                 {
                     // It does, so serve it
                     return GlyphfriendPackage.Glyphs[Library][entryName];
                 }
                 // Otherwise attempt to see if a default icon is defined and loaded and use it
-                if (!String.IsNullOrEmpty(DefaultIconClass) && GlyphfriendPackage.Glyphs[Library].ContainsKey(DefaultIconClass))
+                if (DefaultIconClass != null && GlyphfriendPackage.Glyphs[Library].ContainsKey(DefaultIconClass))
                 {
                     return GlyphfriendPackage.Glyphs[Library][DefaultIconClass];
                 }
