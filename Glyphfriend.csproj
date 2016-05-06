@@ -47,15 +47,16 @@
   <ItemGroup>
     <Compile Include="EmojiCompletionProviders\EmojiCompletionSource.cs" />
     <Compile Include="EmojiCompletionProviders\EmojiGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\EntypoGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\MetroUIGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\MaterialDesignGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\OcticonsGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\FoundationGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\IcoMoonGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\BootstrapGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\IonicGlyphCompletionProvider.cs" />
-    <Compile Include="GlyphCompletionProviders\FontAwesomeGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\BaseGlyphfriendProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\EntypoGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\MetroUIGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\MaterialDesignGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\OcticonsGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\FoundationGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\IcoMoonGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\BootstrapGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\IonicGlyphCompletionProvider.cs" />
+    <Compile Include="GlyphCompletionProviders\Implementations\FontAwesomeGlyphCompletionProvider.cs" />
     <Compile Include="GlyphfriendPackage.cs" />
     <Compile Include="Helpers\MarkdownContentTypeDefinition.cs" />
     <Compile Include="Helpers\MarkdownTextViewListener.cs" />
