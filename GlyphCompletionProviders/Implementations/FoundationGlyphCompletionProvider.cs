@@ -1,39 +1,22 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using Microsoft.CSS.Editor.Completion;
+﻿using Microsoft.CSS.Editor.Completion;
 using Microsoft.VisualStudio.Utilities;
+using System.ComponentModel.Composition;
+using System.Text.RegularExpressions;
 
 namespace Glyphfriend.GlyphCompletionProviders
 {
     [Export(typeof(ICssCompletionEntryGlyphProvider))]
     [Name("Glyphfriend Foundation")]
-    class FoundationGlyphCompletionEntryGlyphProvider : ICssCompletionEntryGlyphProvider
+    class FoundationGlyphCompletionEntryGlyphProvider : BaseGlyphfriendProvider
     {
-        // Define a Regular Expression check for matches from this library
-        private static Regex _regex = new Regex(@"^foundation-icons(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        // Store the Glyph folder related to this library
-        private static string _lib = "Foundation";
-
-        public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
+        public FoundationGlyphCompletionEntryGlyphProvider()
         {
-            // If the source Uri for the image is null, ignore it
-            if (sourceUri == null) { return null; }
-            // Get the file path of the source being used
-            string filename = Path.GetFileName(sourceUri.ToString()).Trim();
-            // Determine if this matches our filename
-            if (_regex.IsMatch(filename) && GlyphfriendPackage.Glyphs.ContainsKey(_lib))
-            {
-                if (GlyphfriendPackage.Glyphs[_lib].ContainsKey(entryName))
-                {
-                    return GlyphfriendPackage.Glyphs[_lib][entryName];
-                }
-                return GlyphfriendPackage.Glyphs[_lib]["fi-default"];
-            }
-            return null;
+            // Define the library name, used to determine the proper folder for the glyphs
+            Library = "Foundation";
+            // Define the pattern used to match with the CSS file that defines the glyphs
+            GlyphCSSDefinitionExpression = new Regex(@"^foundation-icons(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            // Define an optional default icon name to display if a glyph is unavailable
+            DefaultIconClass = "fi-default";
         }
     }
 }

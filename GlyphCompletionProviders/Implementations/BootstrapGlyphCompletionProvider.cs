@@ -1,40 +1,21 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using Microsoft.CSS.Editor.Completion;
+﻿using Microsoft.CSS.Editor.Completion;
 using Microsoft.VisualStudio.Utilities;
+using System.ComponentModel.Composition;
+using System.Text.RegularExpressions;
 
 namespace Glyphfriend.GlyphCompletionProviders
 {
     [Export(typeof(ICssCompletionEntryGlyphProvider))]
     [Name("Glyphfriend Bootstrap")]
     [Order(Before = "Default Bootstrap")]
-    class BootstrapGlyphCompletionProvider : ICssCompletionEntryGlyphProvider
+    class BootstrapGlyphCompletionProvider : BaseGlyphfriendProvider
     {
-        // Define a Regular Expression check for matches from this library
-        private static Regex _regex = new Regex(@"^bootstrap(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        // Store the Glyph folder related to this library
-        private static string _lib = "Bootstrap";
-
-        public ImageSource GetCompletionGlyph(string entryName, Uri sourceUri, CssNameType nameType)
+        public BootstrapGlyphCompletionProvider()
         {
-            // If the source Uri for the image is null, ignore it
-            if (sourceUri == null) { return null; }
-            // Get the file path of the source being used
-            string filename = Path.GetFileName(sourceUri.ToString()).Trim();
-            // Determine if this matches our filename
-            if (_regex.IsMatch(filename) && GlyphfriendPackage.Glyphs.ContainsKey(_lib))
-            {
-                if (GlyphfriendPackage.Glyphs[_lib].ContainsKey(entryName))
-                {
-                    return GlyphfriendPackage.Glyphs[_lib][entryName];
-                }
-                // If we are here, then let Visual Studio handle it...
-            }
-            return null;
+            // Define the library name, used to determine the proper folder for the glyphs
+            Library = "Bootstrap";
+            // Define the pattern used to match with the CSS file that defines the glyphs
+            GlyphCSSDefinitionExpression = new Regex(@"^bootstrap(\.min)?\.css$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         }
     }
 }
