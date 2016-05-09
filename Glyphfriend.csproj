@@ -3982,7 +3982,22 @@
     <Content Include="Glyphs\Entypo\icon-youtube.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-500px.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-amazon.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-american-sign-language-interpreting.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-asl-interpreting .png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-assistive-listening-systems.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-audio-description.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-balance-scale.png">
@@ -4024,10 +4039,16 @@
     <Content Include="Glyphs\FontAwesome\fa-black-tie.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-blind.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-bluetooth-b.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-bluetooth.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-braille.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-calendar-check-o.png">
@@ -4072,7 +4093,16 @@
     <Content Include="Glyphs\FontAwesome\fa-credit-card-alt.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-deaf.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-deafness.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-edge.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-envira.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-expeditedssl.png">
@@ -4097,6 +4127,15 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-gg.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-gitlab.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-glide-g.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-glide.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-hand-grab-o.png">
@@ -4124,6 +4163,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-hand-stop-o.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-hard-of-hearing.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-hashtag.png">
@@ -4166,6 +4208,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-intersex.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-low-vision.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-map-o.png">
@@ -4222,6 +4267,9 @@
     <Content Include="Glyphs\FontAwesome\fa-product-hunt.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-question-circle-o.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-reddit-alien.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -4238,6 +4286,21 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-shopping-basket.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-sign-language.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-signing.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-snapchat-ghost.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-snapchat-square.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-snapchat.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-sticky-note-o.png">
@@ -4264,13 +4327,34 @@
     <Content Include="Glyphs\FontAwesome\fa-tv.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-universal-access.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-usb.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-viadeo-square.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-viadeo.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-vimeo.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-volume-control-phone.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-wheelchair-alt.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-wikipedia-w.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-wpbeginner.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-wpforms.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-y-combinator-square.png">
