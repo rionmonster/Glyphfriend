@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Editor;
+using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
-using Microsoft.VisualStudio.Text.Editor;
 
 namespace Glyphfriend.Helpers
 {
@@ -16,9 +15,12 @@ namespace Glyphfriend.Helpers
         public void VsTextViewCreated(IVsTextView textViewAdapter)
         {
             // If the Glyphs haven't been loaded, load them
-            if(GlyphfriendPackage.Glyphs == null)
+            if (GlyphfriendPackage.Glyphs == null)
             {
-                GlyphfriendPackage.LoadGlyphs();
+                System.Threading.Tasks.Task.Run(() =>
+                {
+                    GlyphfriendPackage.LoadGlyphs();
+                });
             }
         }
     }
