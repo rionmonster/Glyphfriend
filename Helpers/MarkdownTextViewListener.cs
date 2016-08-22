@@ -156,6 +156,13 @@ namespace Glyphfriend.Helpers
             SnapshotPoint caret = _textView.Caret.Position.BufferPosition;
             ITextSnapshot snapshot = caret.Snapshot;
 
+            if (caret > 1)
+            {
+                char prev = snapshot.GetText(caret - 2, 1)[0];
+                if (!char.IsWhiteSpace(prev))
+                    return false;
+            }
+
             // Generate a session based off of the existing broker and textview
             if (!_broker.IsCompletionActive(_textView))
             {
