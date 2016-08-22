@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Media;
@@ -8,8 +6,7 @@ using System.Windows.Media.Imaging;
 
 namespace Glyphfriend
 {
-    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
-    public sealed class GlyphfriendPackage : Package
+    public sealed class GlyphfriendPackage
     {
         private static Dictionary<string, Dictionary<string,ImageSource>> _glyphs;
         internal static Dictionary<string, Dictionary<string, ImageSource>> Glyphs

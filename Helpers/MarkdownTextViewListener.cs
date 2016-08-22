@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Runtime.InteropServices;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.OLE.Interop;
@@ -7,8 +9,6 @@ using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
-using Microsoft.VisualStudio;
-using System.Runtime.InteropServices;
 
 namespace Glyphfriend.Helpers
 {
@@ -28,7 +28,10 @@ namespace Glyphfriend.Helpers
             // If the Emojis haven't been loaded, load them
             if (GlyphfriendPackage.Emojis == null)
             {
-                GlyphfriendPackage.LoadEmojis();
+                System.Threading.Tasks.Task.Run(() =>
+                {
+                    GlyphfriendPackage.LoadEmojis();
+                });
             }
 
             // Set up the Completion handler for Markdown documents
@@ -91,7 +94,7 @@ namespace Glyphfriend.Helpers
                 hresult = Next.Exec(pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut);
             }
 
-            // After the pre-processing has been performed, evaluate the current state 
+            // After the pre-processing has been performed, evaluate the current state
             // and session
             if (ErrorHandler.Succeeded(hresult))
             {
@@ -177,7 +180,7 @@ namespace Glyphfriend.Helpers
             {
                 return false;
             }
-                
+
             // Based off of the available selection, determine if it should be dismissed (via Dismiss) or
             // output (via Commit)
             if (!_currentSession.SelectedCompletionSet.SelectionStatus.IsSelected && !force)
@@ -213,7 +216,7 @@ namespace Glyphfriend.Helpers
             {
                 return false;
             }
-                
+
             // Explicitly cancel the current session
             _currentSession.Dismiss();
 
@@ -223,7 +226,7 @@ namespace Glyphfriend.Helpers
         private bool DoesSessionExist
         {
             // Ensures that the current session exists
-            get { return _currentSession != null;  }
+            get { return _currentSession != null; }
         }
 
         private static char GetTypeChar(IntPtr pvaIn)
