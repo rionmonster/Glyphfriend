@@ -17,7 +17,7 @@ namespace Glyphfriend.EmojiCompletionProviders
         private ITextStructureNavigator _textStructureNavigator;
         private bool _disposed = false;
 
-        public EmojiCompletionSource(ITextBuffer buffer,ITextStructureNavigator textStructureNavigator)
+        public EmojiCompletionSource(ITextBuffer buffer, ITextStructureNavigator textStructureNavigator)
         {
             _buffer = buffer;
             _textStructureNavigator = textStructureNavigator;
@@ -34,7 +34,7 @@ namespace Glyphfriend.EmojiCompletionProviders
             {
                 return;
             }
-               
+
             // Build a snapshot off the current buffer along with a trigger point
             ITextSnapshot snapshot = session.TextView.TextBuffer.CurrentSnapshot;
             SnapshotPoint? triggerPoint = session.GetTriggerPoint(snapshot);
@@ -44,7 +44,7 @@ namespace Glyphfriend.EmojiCompletionProviders
             {
                 return;
             }
-                
+
             // Build a span based off of the current
             ITrackingSpan tracking = FindTokenSpanAtPosition(session);
             // If we couldn't build a span, ignore this Session
@@ -52,7 +52,7 @@ namespace Glyphfriend.EmojiCompletionProviders
             {
                 return;
             }
-                
+
             // Add all of the emojis to the available completions
             List<Completion> completions = _emojis;
             if (completions.Any())
@@ -69,12 +69,12 @@ namespace Glyphfriend.EmojiCompletionProviders
             _disposed = true;
         }
 
-        private static Completion EmojiCompletion(string emoji, ImageSource emojiImage)
+        private static Completion EmojiCompletion(string emoji, LazyImg emojiImage)
         {
             // Map a completion object for each Emoji to the appropriate image
             var formattedEmoji = $":{emoji}:";
             // Build a completion for each Emoji
-            return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage, formattedEmoji);
+            return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage?.Image, formattedEmoji);
         }
 
         private ITrackingSpan FindTokenSpanAtPosition(ICompletionSession session)
@@ -86,6 +86,6 @@ namespace Glyphfriend.EmojiCompletionProviders
             return currentPoint.Snapshot.CreateTrackingSpan(extent.Span, SpanTrackingMode.EdgeInclusive);
         }
 
-        
+
     }
 }
