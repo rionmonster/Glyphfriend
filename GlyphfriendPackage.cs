@@ -36,6 +36,9 @@ namespace Glyphfriend
             }
         }
 
+        internal static bool AreGlyphsLoaded { get; set; } = false;
+        internal static bool AreEmojisLoaded { get; set; } = false;
+
         public static void LoadGlyphs()
         {
             // Instantiate the Glyph Dictionary

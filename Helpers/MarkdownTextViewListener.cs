@@ -26,8 +26,9 @@ namespace Glyphfriend.Helpers
         public void VsTextViewCreated(IVsTextView textViewAdapter)
         {
             // If the Emojis haven't been loaded, load them
-            if (GlyphfriendPackage.Emojis == null)
+            if (!GlyphfriendPackage.AreEmojisLoaded)
             {
+                GlyphfriendPackage.AreEmojisLoaded = true;
                 System.Threading.Tasks.Task.Run(() =>
                 {
                     GlyphfriendPackage.LoadEmojis();
