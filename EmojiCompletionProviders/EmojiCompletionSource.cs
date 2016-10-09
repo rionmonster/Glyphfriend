@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
+using Glyphfriend.Helpers;
 
 namespace Glyphfriend.EmojiCompletionProviders
 {
@@ -69,12 +70,12 @@ namespace Glyphfriend.EmojiCompletionProviders
             _disposed = true;
         }
 
-        private static Completion EmojiCompletion(string emoji, ImageSource emojiImage)
+        private static Completion EmojiCompletion(string emoji, LazyImage emojiImage)
         {
             // Map a completion object for each Emoji to the appropriate image
             var formattedEmoji = $":{emoji}:";
             // Build a completion for each Emoji
-            return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage, formattedEmoji);
+            return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage?.Image, formattedEmoji);
         }
 
         private ITrackingSpan FindTokenSpanAtPosition(ICompletionSession session)

@@ -58,6 +58,7 @@
     <Compile Include="GlyphCompletionProviders\Implementations\IonicGlyphCompletionProvider.cs" />
     <Compile Include="GlyphCompletionProviders\Implementations\FontAwesomeGlyphCompletionProvider.cs" />
     <Compile Include="GlyphfriendPackage.cs" />
+    <Compile Include="Helpers\LazyImage.cs" />
     <Compile Include="Helpers\MarkdownContentTypeDefinition.cs" />
     <Compile Include="Helpers\MarkdownTextViewListener.cs" />
     <Compile Include="Helpers\HtmlTextViewListener.cs" />
@@ -92,10 +93,12 @@
     <Reference Include="Microsoft.VisualStudio.Text.UI.Wpf, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
