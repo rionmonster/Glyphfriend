@@ -4111,10 +4111,16 @@
     <Content Include="Glyphs\FontAwesome\fa-expeditedssl.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-fa.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-feed.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-firefox.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-first-order.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-fonticons.png">
@@ -4139,6 +4145,12 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-glide.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-google-plus-circle.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-google-plus-official.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-hand-grab-o.png">
@@ -4267,6 +4279,9 @@
     <Content Include="Glyphs\FontAwesome\fa-percent.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\FontAwesome\fa-pied-piper-pp.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\FontAwesome\fa-product-hunt.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -4277,6 +4292,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-registered.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-resistance.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-safari.png">
@@ -4370,6 +4388,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\FontAwesome\fa-yc.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\FontAwesome\fa-yoast.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Foundation\fi-default.png">
