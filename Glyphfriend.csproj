@@ -58,10 +58,10 @@
     <Compile Include="GlyphCompletionProviders\Implementations\IonicGlyphCompletionProvider.cs" />
     <Compile Include="GlyphCompletionProviders\Implementations\FontAwesomeGlyphCompletionProvider.cs" />
     <Compile Include="GlyphfriendPackage.cs" />
+    <Compile Include="Helpers\Html\HtmlTextViewListener.cs" />
     <Compile Include="Helpers\LazyImage.cs" />
-    <Compile Include="Helpers\MarkdownContentTypeDefinition.cs" />
-    <Compile Include="Helpers\MarkdownTextViewListener.cs" />
-    <Compile Include="Helpers\HtmlTextViewListener.cs" />
+    <Compile Include="Helpers\Markdown\MarkdownContentTypeDefinition.cs" />
+    <Compile Include="Helpers\Markdown\MarkdownTextViewListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

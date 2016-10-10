@@ -1,26 +1,20 @@
 ﻿using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Text.Operations;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Media;
 using Glyphfriend.Helpers;
 
 namespace Glyphfriend.EmojiCompletionProviders
 {
-    class EmojiCompletionSource : ICompletionSource
+    internal class EmojiCompletionSource : ICompletionSource
     {
-        private readonly ITextBuffer _buffer;
         private readonly List<Completion> _emojis;
-        private ITextStructureNavigator _textStructureNavigator;
-        private bool _disposed = false;
+        private readonly ITextStructureNavigator _textStructureNavigator;
+        private bool _disposed;
 
-        public EmojiCompletionSource(ITextBuffer buffer,ITextStructureNavigator textStructureNavigator)
+        public EmojiCompletionSource(ITextStructureNavigator textStructureNavigator)
         {
-            _buffer = buffer;
             _textStructureNavigator = textStructureNavigator;
             // Build a collection of Emojis to handle 
             _emojis = GlyphfriendPackage.Emojis
@@ -41,7 +35,7 @@ namespace Glyphfriend.EmojiCompletionProviders
             SnapshotPoint? triggerPoint = session.GetTriggerPoint(snapshot);
 
             // Ensuer the trigger point is valid
-            if (triggerPoint == null || !triggerPoint.HasValue || triggerPoint.Value.Position == 0)
+            if (triggerPoint == null || triggerPoint.Value.Position == 0)
             {
                 return;
             }
@@ -78,7 +72,7 @@ namespace Glyphfriend.EmojiCompletionProviders
             return new Completion(formattedEmoji, formattedEmoji, formattedEmoji, emojiImage?.Image, formattedEmoji);
         }
 
-        private ITrackingSpan FindTokenSpanAtPosition(ICompletionSession session)
+        private ITrackingSpan FindTokenSpanAtPosition(IIntellisenseSession session)
         {
             // Look for the nearly start of line or space prior to the starting character and 
             // examine it
@@ -86,7 +80,5 @@ namespace Glyphfriend.EmojiCompletionProviders
             TextExtent extent = _textStructureNavigator.GetExtentOfWord(currentPoint);
             return currentPoint.Snapshot.CreateTrackingSpan(extent.Span, SpanTrackingMode.EdgeInclusive);
         }
-
-        
     }
 }

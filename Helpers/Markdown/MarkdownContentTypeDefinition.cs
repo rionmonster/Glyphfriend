@@ -1,12 +1,7 @@
-﻿using Microsoft.VisualStudio.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.Composition;
+using Microsoft.VisualStudio.Utilities;
 
-namespace Glyphfriend.Helpers
+namespace Glyphfriend.Helpers.Markdown
 {
     public class MarkdownContentTypeDefinition
     {
@@ -20,7 +15,7 @@ namespace Glyphfriend.Helpers
         [Export(typeof(FileExtensionToContentTypeDefinition))]
         [ContentType(MarkdownContentType)]
         [FileExtension(".md")]
-        public FileExtensionToContentTypeDefinition MDFileExtension { get; set; }
+        public FileExtensionToContentTypeDefinition MdFileExtension { get; set; }
 
         [Export(typeof(FileExtensionToContentTypeDefinition))]
         [ContentType(MarkdownContentType)]
