@@ -18034,6 +18034,9 @@
     <Content Include="Glyphs\Octicons\octicon-diff.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-ellipses.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-ellipsis.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -18070,6 +18073,9 @@
     <Content Include="Glyphs\Octicons\octicon-file-zip.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-file.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-flame.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -18104,6 +18110,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-globe.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-grabber.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-graph.png">
@@ -18283,6 +18292,9 @@
     <Content Include="Glyphs\Octicons\octicon-plug.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Glyphs\Octicons\octicon-plus-small.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Glyphs\Octicons\octicon-plus.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -18308,6 +18320,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-radio-tower.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Glyphs\Octicons\octicon-reply.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Glyphs\Octicons\octicon-repo-clone.png">
