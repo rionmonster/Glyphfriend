@@ -10,24 +10,25 @@ using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
 
-namespace Glyphfriend.Helpers
+namespace Glyphfriend.Helpers.Markdown
 {
     [Export(typeof(IVsTextViewCreationListener))]
     [ContentType(MarkdownContentTypeDefinition.MarkdownContentType)]
     [TextViewRole(PredefinedTextViewRoles.Document)]
-    class MarkdownTextViewListener : IVsTextViewCreationListener
+    internal class MarkdownTextViewListener : IVsTextViewCreationListener
     {
         [Import]
-        IVsEditorAdaptersFactoryService AdaptersFactory = null;
+        IVsEditorAdaptersFactoryService _adaptersFactory;
         [Import]
-        ICompletionBroker CompletionBroker = null;
+        ICompletionBroker _completionBroker;
 
         // This will be triggered when a Markdown document is opened
         public void VsTextViewCreated(IVsTextView textViewAdapter)
         {
             // If the Emojis haven't been loaded, load them
-            if (GlyphfriendPackage.Emojis == null)
+            if (!GlyphfriendPackage.AreEmojisLoaded)
             {
+                GlyphfriendPackage.AreEmojisLoaded = true;
                 System.Threading.Tasks.Task.Run(() =>
                 {
                     GlyphfriendPackage.LoadEmojis();
@@ -35,8 +36,8 @@ namespace Glyphfriend.Helpers
             }
 
             // Set up the Completion handler for Markdown documents
-            IWpfTextView view = AdaptersFactory.GetWpfTextView(textViewAdapter);
-            CommandFilter filter = new CommandFilter(view, CompletionBroker);
+            IWpfTextView view = _adaptersFactory.GetWpfTextView(textViewAdapter);
+            CommandFilter filter = new CommandFilter(view, _completionBroker);
             IOleCommandTarget next;
             ErrorHandler.ThrowOnFailure(textViewAdapter.AddCommandFilter(filter, out next));
             filter.Next = next;
@@ -195,11 +196,8 @@ namespace Glyphfriend.Helpers
                 _currentSession.Dismiss();
                 return false;
             }
-            else
-            {
-                _currentSession.Commit();
-                return true;
-            }
+            _currentSession.Commit();
+            return true;
         }
 
         private void Filter()
@@ -226,15 +224,10 @@ namespace Glyphfriend.Helpers
 
             // Explicitly cancel the current session
             _currentSession.Dismiss();
-
             return true;
         }
 
-        private bool DoesSessionExist
-        {
-            // Ensures that the current session exists
-            get { return _currentSession != null; }
-        }
+        private bool DoesSessionExist => _currentSession != null;
 
         private static char GetTypeChar(IntPtr pvaIn)
         {
