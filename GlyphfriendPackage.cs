@@ -8,8 +8,8 @@ namespace Glyphfriend
 {
     public sealed class GlyphfriendPackage
     {
-        private static Dictionary<string, Dictionary<string,ImageSource>> _glyphs;
-        internal static Dictionary<string, Dictionary<string, ImageSource>> Glyphs
+        private static Dictionary<string, Dictionary<string, LazyImg>> _glyphs;
+        internal static Dictionary<string, Dictionary<string, LazyImg>> Glyphs
         {
             get
             {
@@ -17,8 +17,8 @@ namespace Glyphfriend
             }
         }
 
-        private static Dictionary<string, ImageSource> _emojis;
-        internal static Dictionary<string, ImageSource> Emojis
+        private static Dictionary<string, LazyImg> _emojis;
+        internal static Dictionary<string, LazyImg> Emojis
         {
             get
             {
@@ -33,27 +33,26 @@ namespace Glyphfriend
                 return System.Reflection.Assembly.GetExecutingAssembly().Location;
             }
         }
-
+        internal static bool IsLoadGlyphs { get; set; } = false;
+        internal static bool IsLoadEmojis { get; set; } = false;
         public static void LoadGlyphs()
         {
             // Instantiate the Glyph Dictionary
-            _glyphs = _glyphs ?? new Dictionary<string, Dictionary<string,ImageSource>>();
+            _glyphs = _glyphs ?? new Dictionary<string, Dictionary<string, LazyImg>>();
             // Construct a directory of Glyphs
             var glyphDirectory = new DirectoryInfo(Path.Combine(Path.GetDirectoryName(Assembly), "Glyphs"));
             // Loop through all of the directories and map the glyphs to their appropriate libraries
-            foreach(var directory in glyphDirectory.EnumerateDirectories())
+            foreach (var directory in glyphDirectory.EnumerateDirectories())
             {
                 // Instantiate the dictionary with the name of the library
-                _glyphs.Add(directory.Name, new Dictionary<string, ImageSource>());
+                _glyphs.Add(directory.Name, new Dictionary<string, LazyImg>());
                 // Iterate through all of the glyphs in this dictionary
                 foreach (var glyph in directory.EnumerateFiles("*.png", SearchOption.AllDirectories))
                 {
                     try
                     {
-                        // Generate the Glyph
-                        var glyphBitmap = BitmapFrame.Create(new Uri(glyph.FullName, UriKind.RelativeOrAbsolute));
                         // Add it to the collection (under the specific library)
-                        _glyphs[directory.Name].Add(Path.GetFileNameWithoutExtension(glyph.Name), glyphBitmap);
+                        _glyphs[directory.Name].Add(Path.GetFileNameWithoutExtension(glyph.Name), new LazyImg { Path = new Uri(glyph.FullName, UriKind.RelativeOrAbsolute) });
                     }
                     catch (Exception)
                     {
@@ -66,7 +65,7 @@ namespace Glyphfriend
         public static void LoadEmojis()
         {
             // Instantiate the Glyph Dictionary
-            _emojis = _emojis ?? new Dictionary<string, ImageSource>();
+            _emojis = _emojis ?? new Dictionary<string, LazyImg>();
 
             // Construct a directory of Emojis
             var emojiDirectory = Path.Combine(Path.GetDirectoryName(Assembly), "Emojis");
@@ -75,9 +74,7 @@ namespace Glyphfriend
             {
                 try
                 {
-                    // Generate the Glyph
-                    var emojiBitmap = BitmapFrame.Create(new Uri(emoji.FullName, UriKind.RelativeOrAbsolute));
-                    _emojis.Add(Path.GetFileNameWithoutExtension(emoji.Name), emojiBitmap);
+                    _emojis.Add(Path.GetFileNameWithoutExtension(emoji.Name), new LazyImg { Path = new Uri(emoji.FullName, UriKind.RelativeOrAbsolute) });
                 }
                 catch (Exception)
                 {

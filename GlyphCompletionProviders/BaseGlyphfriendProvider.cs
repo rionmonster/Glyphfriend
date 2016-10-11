@@ -34,12 +34,12 @@ namespace Glyphfriend.GlyphCompletionProviders
                 if (entryName != null && GlyphfriendPackage.Glyphs[Library].ContainsKey(entryName))
                 {
                     // It does, so serve it
-                    return GlyphfriendPackage.Glyphs[Library][entryName];
+                    return GlyphfriendPackage.Glyphs[Library][entryName]?.Image;
                 }
                 // Otherwise attempt to see if a default icon is defined and loaded and use it
                 if (DefaultIconClass != null && GlyphfriendPackage.Glyphs[Library].ContainsKey(DefaultIconClass))
                 {
-                    return GlyphfriendPackage.Glyphs[Library][DefaultIconClass];
+                    return GlyphfriendPackage.Glyphs[Library][DefaultIconClass]?.Image;
                 }
             }
             // Let Visual Studio handle this on its own

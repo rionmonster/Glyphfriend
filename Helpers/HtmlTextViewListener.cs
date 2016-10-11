@@ -15,8 +15,9 @@ namespace Glyphfriend.Helpers
         public void VsTextViewCreated(IVsTextView textViewAdapter)
         {
             // If the Glyphs haven't been loaded, load them
-            if (GlyphfriendPackage.Glyphs == null)
+            if (!GlyphfriendPackage.IsLoadGlyphs)
             {
+                GlyphfriendPackage.IsLoadGlyphs = true;
                 System.Threading.Tasks.Task.Run(() =>
                 {
                     GlyphfriendPackage.LoadGlyphs();
