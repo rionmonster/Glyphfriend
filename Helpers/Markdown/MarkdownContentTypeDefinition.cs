@@ -7,17 +7,10 @@ namespace Glyphfriend.Helpers.Markdown
     {
         public const string MarkdownContentType = "markdown";
 
-        [Export(typeof(ContentTypeDefinition))]
-        [Name(MarkdownContentType)]
-        [BaseDefinition("htmlx")]
-        public ContentTypeDefinition IMarkdownContentType { get; set; }
-
-        // Removed due to conflict with MarkdownEditor extension (https://github.com/madskristensen/MarkdownEditor)
-
-        //[Export(typeof(FileExtensionToContentTypeDefinition))]
-        //[ContentType(MarkdownContentType)]
-        //[FileExtension(".md")]
-        //public FileExtensionToContentTypeDefinition MdFileExtension { get; set; }
+        [Export(typeof(FileExtensionToContentTypeDefinition))]
+        [ContentType(MarkdownContentType)]
+        [FileExtension(".md")]
+        public FileExtensionToContentTypeDefinition MdFileExtension { get; set; }
 
         [Export(typeof(FileExtensionToContentTypeDefinition))]
         [ContentType(MarkdownContentType)]
