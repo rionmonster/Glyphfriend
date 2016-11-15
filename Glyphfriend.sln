@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22310.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25909.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.2015", "src/Glyphfriend.2015/Glyphfriend.2015.csproj", "{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.2015", "src\Glyphfriend.2015\Glyphfriend.2015.csproj", "{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49CFED2A-A111-4F40-A536-9C274C712E51}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.2017", "src\Glyphfriend.2017\Glyphfriend.2017.csproj", "{EAEBB7D9-742D-4DFD-837D-356780992A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
