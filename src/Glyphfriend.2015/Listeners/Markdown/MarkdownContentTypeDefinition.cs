@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Utilities;
 
-namespace Glyphfriend.Helpers.Markdown
+namespace Glyphfriend.Listeners.Markdown
 {
     public class MarkdownContentTypeDefinition
     {

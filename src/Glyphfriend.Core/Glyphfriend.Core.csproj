@@ -45,7 +45,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlyphfriendPackage.cs" />
     <Compile Include="LazyImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

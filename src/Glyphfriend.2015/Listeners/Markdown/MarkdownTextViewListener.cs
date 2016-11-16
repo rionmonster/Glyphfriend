@@ -9,7 +9,6 @@ using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
-using Glyphfriend.Core;
 
 namespace Glyphfriend.Listeners.Markdown
 {

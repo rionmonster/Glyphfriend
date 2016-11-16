@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Glyphfriend.Core;
 
-namespace Glyphfriend.Core
+namespace Glyphfriend
 {
     public sealed class GlyphfriendPackage
     {
-        public static Dictionary<string, Dictionary<string, LazyImage>> Glyphs { get; } = new Dictionary<string, Dictionary<string, LazyImage>>();
-        public static Dictionary<string, LazyImage> Emojis { get; } = new Dictionary<string, LazyImage>();
-        public static bool AreGlyphsLoaded { get; private set; }
-        public static bool AreEmojisLoaded { get; private set; }
+        internal static Dictionary<string, Dictionary<string, LazyImage>> Glyphs { get; } = new Dictionary<string, Dictionary<string, LazyImage>>();
+        internal static Dictionary<string, LazyImage> Emojis { get; } = new Dictionary<string, LazyImage>();
+        internal static bool AreGlyphsLoaded { get; private set; }
+        internal static bool AreEmojisLoaded { get; private set; }
         internal static string Assembly => System.Reflection.Assembly.GetExecutingAssembly().Location;
 
         public static void LoadGlyphs()
