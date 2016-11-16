@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Glyphfriend.Helpers;
 
-namespace Glyphfriend
+namespace Glyphfriend.Core
 {
     public sealed class GlyphfriendPackage
     {
-  
-        internal static Dictionary<string, Dictionary<string, LazyImage>> Glyphs { get; } = new Dictionary<string, Dictionary<string, LazyImage>>();
-        internal static Dictionary<string, LazyImage> Emojis { get; } = new Dictionary<string, LazyImage>();
+        public static Dictionary<string, Dictionary<string, LazyImage>> Glyphs { get; } = new Dictionary<string, Dictionary<string, LazyImage>>();
+        public static Dictionary<string, LazyImage> Emojis { get; } = new Dictionary<string, LazyImage>();
+        public static bool AreGlyphsLoaded { get; private set; }
+        public static bool AreEmojisLoaded { get; private set; }
         internal static string Assembly => System.Reflection.Assembly.GetExecutingAssembly().Location;
-        internal static bool AreGlyphsLoaded { get; set; } = false;
-        internal static bool AreEmojisLoaded { get; set; } = false;
 
         public static void LoadGlyphs()
         {
             // Construct a directory of Glyphs
-            var glyphDirectory = new DirectoryInfo(Path.Combine(Path.GetDirectoryName(Assembly), "Glyphs"));
+            var glyphDirectory = new DirectoryInfo(Path.Combine(Path.GetDirectoryName(Assembly),"Glyphfriend.Core","Glyphs"));
             // Loop through all of the directories and map the glyphs to their appropriate libraries
             foreach(var directory in glyphDirectory.EnumerateDirectories())
             {
@@ -37,12 +35,13 @@ namespace Glyphfriend
                     }
                 }
             }
+            AreGlyphsLoaded = true;
         }
 
         public static void LoadEmojis()
         {
             // Construct a directory of Emojis
-            var emojiDirectory = Path.Combine(Path.GetDirectoryName(Assembly), "Emojis");
+            var emojiDirectory = Path.Combine(Path.GetDirectoryName(Assembly),"Glyphfriend.Core","Emojis");
             // Loop through all of the directories and map the glyphs to their appropriate libraries
             foreach (var emoji in new DirectoryInfo(emojiDirectory).EnumerateFiles("*.png", SearchOption.AllDirectories))
             {
@@ -56,6 +55,7 @@ namespace Glyphfriend
                     // An error occurred when creating the Emoji, ignore it (it will be handled in the provider)
                 }
             }
+            AreEmojisLoaded = true;
         }
     }
 }

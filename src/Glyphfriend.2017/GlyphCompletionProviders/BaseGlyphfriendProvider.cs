@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
+using Glyphfriend.Core;
 
 namespace Glyphfriend.GlyphCompletionProviders
 {

@@ -3,9 +3,9 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Glyphfriend.Helpers
+namespace Glyphfriend.Core
 {
-    internal class LazyImage
+    public class LazyImage
     {
         public Uri Path { get; set; }
 

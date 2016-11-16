@@ -9,8 +9,9 @@ using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
+using Glyphfriend.Core;
 
-namespace Glyphfriend.Helpers.Markdown
+namespace Glyphfriend.Listeners.Markdown
 {
     [Export(typeof(IVsTextViewCreationListener))]
     [ContentType(MarkdownContentTypeDefinition.MarkdownContentType)]
@@ -28,7 +29,6 @@ namespace Glyphfriend.Helpers.Markdown
             // If the Emojis haven't been loaded, load them
             if (!GlyphfriendPackage.AreEmojisLoaded)
             {
-                GlyphfriendPackage.AreEmojisLoaded = true;
                 System.Threading.Tasks.Task.Run(() =>
                 {
                     GlyphfriendPackage.LoadEmojis();
