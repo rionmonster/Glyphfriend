@@ -4,7 +4,7 @@
     <Identity Id="Glyphfriend.2015.RionWilliams.950d05f7-bb25-43ce-b682-44b377b5307d" Version="1.5.4.0" Language="en-US" Publisher="Rion Williams" />
     <DisplayName>Glyphfriend 2015</DisplayName>
     <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Foundation, IonIcons and more.</Description>
-    <MoreInfo>https://visualstudiogallery.msdn.microsoft.com/5fd24afb-b3b2-4cec-9b03-1cfcec6123aa</MoreInfo>
+    <MoreInfo>https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend</MoreInfo>
     <License>LICENSE.txt</License>
     <Icon>Glyphfriend.png</Icon>
     <PreviewImage>Glyphfriend.png</PreviewImage>
