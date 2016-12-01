@@ -1,15 +1,19 @@
-version: 1.0.{build}
-os: Visual Studio 2015
+image: Visual Studio 2017 RC
 
 install:
-- set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%"
-- ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
+  - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
+  - powershell -NoProfile -ExecutionPolicy unrestricted -Command "&{iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.ps1'))}"
 
 before_build:
   - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
+  - ps: Vsix-IncrementNuspecVersion .\src\BundlerMinifier\MSBuild\*.nuspec
+  - ps: Vsix-TokenReplacement src\Glyphfriend.Core\Constants.cs 'VERSION = "([0-9\\.]+)"' 'VERSION = "{version}"'
 
 build_script:
-  - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
+  - msbuild .\src\Glyphfriend.2015\Glyphfriend.2015.csproj /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
+  - msbuild .\src\Glyphfriend.2017\Glyphfriend.2017.csproj /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
+  - dotnet restore .\src\Glyphfriend.Core --ignore-failed-sources -v Error
+  - dotnet pack src\Glyphfriend.Core -c Release
 
 after_test:
-  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
+  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery .\src\**\Release\*.vsix
