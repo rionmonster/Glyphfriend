@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.25909.2
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.2015", "src\Glyphfriend.2015\Glyphfriend.2015.csproj", "{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49CFED2A-A111-4F40-A536-9C274C712E51}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
 		Glyphfriend.png = Glyphfriend.png
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
