@@ -9,6 +9,8 @@ before_build:
   - ps: Vsix-TokenReplacement src\Glyphfriend.Core\Constants.cs 'VERSION = "([0-9\\.]+)"' 'VERSION = "{version}"'
 
 build_script:
+  - nuget restore .\src\Glyphfriend.2015 -Verbosity quiet -PackagesDirectory .\Packages
+  - nuget restore .\src\Glyphfriend.2017 -Verbosity quiet -PackagesDirectory .\Packages
   - msbuild .\src\Glyphfriend.2015\Glyphfriend.2015.csproj /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
   - msbuild .\src\Glyphfriend.2017\Glyphfriend.2017.csproj /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
   - dotnet restore .\src\Glyphfriend.Core --ignore-failed-sources -v Error
