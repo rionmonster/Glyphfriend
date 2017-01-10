@@ -44,6 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -57,6 +58,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSS.Core">
+      <HintPath>..\..\lib\VS2017\Microsoft.CSS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSS.Editor">
+      <HintPath>..\..\lib\VS2017\Microsoft.CSS.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Html.Core">
+      <HintPath>..\..\lib\VS2017\Microsoft.Html.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Html.Editor">
+      <HintPath>..\..\lib\VS2017\Microsoft.Html.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Core">
+      <HintPath>..\..\lib\VS2017\Microsoft.Web.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Editor">
+      <HintPath>..\..\lib\VS2017\Microsoft.Web.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\protobuf-net.2.1.0\lib\net451\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
