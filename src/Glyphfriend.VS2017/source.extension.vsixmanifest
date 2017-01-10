@@ -2,8 +2,8 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="Glyphfriend.VS2017.RionWilliams.3aa76a80-28de-4e01-abb7-211328a8125c" Version="2.0" Language="en-US" Publisher="Rion Williams" />
-    <DisplayName>Glyphfriend.VS2017</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <DisplayName>Glyphfriend 2017</DisplayName>
+        <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Material Design, Octicons, and more.</Description>
     <MoreInfo>https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend</MoreInfo>
     <License>LICENSE.txt</License>
     <Icon>Glyphfriend.png</Icon>
