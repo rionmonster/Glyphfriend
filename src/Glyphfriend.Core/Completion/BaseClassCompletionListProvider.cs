@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace Glyphfriend
 {
-    abstract class BaseClassCompletionCompletion : IHtmlCompletionListProvider
+    abstract class BaseClassCompletionProvider : IHtmlCompletionListProvider
     {
         public abstract string CompletionType { get; }
 
