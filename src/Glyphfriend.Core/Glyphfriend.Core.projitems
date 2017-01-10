@@ -9,5 +9,8 @@
     <Import_RootNamespace>Glyphfriend.Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Completion\BaseClassCompletionListProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphClassCompletionListProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VSPackage.cs" />
   </ItemGroup>
 </Project>

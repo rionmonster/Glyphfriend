@@ -1,41 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26020.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.2015", "src\Glyphfriend.2015\Glyphfriend.2015.csproj", "{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Glyphfriend.Core", "src\Glyphfriend.Core\Glyphfriend.Core.shproj", "{8189A63E-D159-4195-BE2E-D44B022B45AB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49CFED2A-A111-4F40-A536-9C274C712E51}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		appveyor.yml = appveyor.yml
-		Glyphfriend.png = Glyphfriend.png
-		LICENSE.txt = LICENSE.txt
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.2017", "src\Glyphfriend.2017\Glyphfriend.2017.csproj", "{EAEBB7D9-742D-4DFD-837D-356780992A82}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.Core", "src\Glyphfriend.Core\Glyphfriend.Core.csproj", "{4008DEEE-47BE-4695-A51D-A90FDCAA643D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.Packager", "src\Glyphfriend.Packager\Glyphfriend.Packager.csproj", "{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{8189a63e-d159-4195-be2e-d44b022b45ab}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BCCEBD8-3675-4690-BE75-E46A5C246BAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAEBB7D9-742D-4DFD-837D-356780992A82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4008DEEE-47BE-4695-A51D-A90FDCAA643D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4008DEEE-47BE-4695-A51D-A90FDCAA643D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4008DEEE-47BE-4695-A51D-A90FDCAA643D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4008DEEE-47BE-4695-A51D-A90FDCAA643D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
