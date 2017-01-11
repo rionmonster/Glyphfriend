@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2017", "src\G
 		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E} = {1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2015", "src\Glyphfriend.VS2015\Glyphfriend.VS2015.csproj", "{FA04448A-6A92-45F6-904B-683029DE66A3}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{8189a63e-d159-4195-be2e-d44b022b45ab}*SharedItemsImports = 13
@@ -30,6 +32,10 @@ Global
 		{D1402395-BE4D-4C7F-A5A2-A5EC6AC57F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1402395-BE4D-4C7F-A5A2-A5EC6AC57F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1402395-BE4D-4C7F-A5A2-A5EC6AC57F8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA04448A-6A92-45F6-904B-683029DE66A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA04448A-6A92-45F6-904B-683029DE66A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA04448A-6A92-45F6-904B-683029DE66A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA04448A-6A92-45F6-904B-683029DE66A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
