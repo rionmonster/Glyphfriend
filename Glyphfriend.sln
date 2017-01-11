@@ -13,6 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2017", "src\G
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2015", "src\Glyphfriend.VS2015\Glyphfriend.VS2015.csproj", "{FA04448A-6A92-45F6-904B-683029DE66A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E} = {1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
