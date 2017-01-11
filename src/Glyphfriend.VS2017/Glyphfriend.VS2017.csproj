@@ -53,17 +53,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Glyphfriend.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="glyphs.bin">
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Visible>False</Visible>
+    </Content>
+    <Content Include="Glyphfriend.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <Visible>False</Visible>
     </Content>
     <Content Include="LICENSE.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="glyphs.bin">
       <IncludeInVSIX>true</IncludeInVSIX>
       <Visible>False</Visible>
     </Content>
