@@ -13,12 +13,4 @@
     <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphClassCompletionListProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VSPackage.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Glyphfriend.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)LICENSE.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 </Project>
