@@ -10,12 +10,16 @@ using System.Windows.Media.Imaging;
 namespace Glyphfriend
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
-    [ProvideAutoLoad(UIContextGuids80.NoSolution)]
-    // TODO: Determine if we can target a "later" context (i.e. load when an HTML file is opened
-    // as opposed to loading when Visual Studio is launched)
+    [ProvideAutoLoad(HtmlFileLoadedContext)]
+    [ProvideUIContextRule(HtmlFileLoadedContext,
+        name: "HTML File Loaded",
+        expression: "HtmlConfig",
+        termNames: new[] { "HtmlConfig" },
+        termValues: new[] { "ActiveEditorContentType:htmlx" })]
     public sealed class VSPackage : Package
     {
+        public const string HtmlFileLoadedContext = "21F5568E-A5DE-4821-AF39-F4F1049BB9CF";
+
         internal static Dictionary<string, ImageSource> Glyphs { get; private set; }
         internal static string AssemblyLocation => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
