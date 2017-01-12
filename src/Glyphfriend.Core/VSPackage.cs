@@ -19,7 +19,7 @@ namespace Glyphfriend
         internal static Dictionary<string, ImageSource> Glyphs { get; private set; }
         internal static string AssemblyLocation => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-        public VSPackage()
+        protected override void Initialize()
         {
             DeserializeGlyphsFromBinary();
         }
