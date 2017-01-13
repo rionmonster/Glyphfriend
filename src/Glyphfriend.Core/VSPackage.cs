@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace Glyphfriend
 {
-    [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+    [PackageRegistration(UseManagedResourcesOnly = true)]
     [ProvideAutoLoad(HtmlFileLoadedContext)]
     [ProvideUIContextRule(HtmlFileLoadedContext,
         name: "HTML File Loaded",
