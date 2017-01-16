@@ -1,20 +1,26 @@
-image: Visual Studio 2017 RC
+version: 2.0.{build}
+
+environment:
+   matrix:
+      # Visual Studio 2015
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+        SRC_FOLDER: src/VS2015
+      # Visual Studio 2017
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 RC
+        SRC_FOLDER: src/VS2017
+
+configuration:
+   - Release
 
 install:
-  - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
-  - powershell -NoProfile -ExecutionPolicy unrestricted -Command "&{iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.ps1'))}"
+   - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
+   - powershell -NoProfile -ExecutionPolicy unrestricted -Command "&{iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.ps1'))}"
 
 before_build:
-  - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
-  - ps: Vsix-TokenReplacement src\Glyphfriend.Core\Constants.cs 'VERSION = "([0-9\\.]+)"' 'VERSION = "{version}"'
+   - nuget restore %SRC_FOLDER%
 
 build_script:
-  - nuget restore .\src\Glyphfriend.2015 -Verbosity quiet -PackagesDirectory .\Packages
-  - nuget restore .\src\Glyphfriend.2017 -Verbosity quiet -PackagesDirectory .\Packages
-  - msbuild .\src\Glyphfriend.2015\Glyphfriend.2015.csproj /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
-  - msbuild .\src\Glyphfriend.2017\Glyphfriend.2017.csproj /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
-  - dotnet restore .\src\Glyphfriend.Core --ignore-failed-sources -v Error
-  - dotnet pack src\Glyphfriend.Core -c Release
+   - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
 
 after_test:
-  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery .\src\**\Release\*.vsix
+   - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
