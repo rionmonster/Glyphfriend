@@ -16,6 +16,7 @@ Glyphfriend is a Visual Studio 2015 extension to enhance the existing Intellisen
 * [Material Design](https://materialdesignicons.com/)
 * [MetroUI](https://metroui.org.ua/)
 * [Octicons](https://octicons.github.com/)
+* [Metro UI CSS](http://metroui.org.ua/font.html)
 
 Glyphfriend now also supports [Emoji emoticons](http://www.emoji-cheat-sheet.com/) within Markdown files, for those of you that enjoy using Visual Studio as a Markdown 
 editor.
