@@ -1,0 +1,13 @@
+version: 2.0.{build}
+
+environment:
+
+configuration:
+
+install:
+
+before_build:
+
+build_script:
+
+after_test:
