@@ -1,13 +1,11 @@
 version: 2.0.{build}
 
-environment:
-   matrix:
-      # Visual Studio 2015https://github.com/IlyaFinkelshteyn/Glyphfriend/pulls
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-        SRC_FOLDER: src/Glyphfriend.VS2015
-      # Visual Studio 2017
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 RC
-        SRC_FOLDER: src/Glyphfriend.VS2017
+image:
+- Visual Studio 2015
+- Visual Studio 2017 RC
+configuration:
+- VS2015-Release
+- VS2017-Release
 
 configuration:
    - Release
@@ -21,7 +19,7 @@ before_build:
     #%SRC_FOLDER%
 
 build_script:
-   - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
+   - msbuild /p:configuration=%configuration% /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
 
 after_test:
    - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
