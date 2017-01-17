@@ -2,12 +2,12 @@ version: 2.0.{build}
 
 environment:
    matrix:
-      # Visual Studio 2015
+      # Visual Studio 2015https://github.com/IlyaFinkelshteyn/Glyphfriend/pulls
       - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-        SRC_FOLDER: src/VS2015
+        SRC_FOLDER: src/Glyphfriend.VS2015
       # Visual Studio 2017
       - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 RC
-        SRC_FOLDER: src/VS2017
+        SRC_FOLDER: src/Glyphfriend.VS2017
 
 configuration:
    - Release
