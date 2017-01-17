@@ -17,7 +17,9 @@ install:
    - powershell -NoProfile -ExecutionPolicy unrestricted -Command "&{iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.ps1'))}"
 
 before_build:
-   - nuget restore %SRC_FOLDER%
+   - cd %SRC_FOLDER% 
+   - nuget restore
+   - cd %APPVEYOR_BUILD_FOLDER%
 
 build_script:
    - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
