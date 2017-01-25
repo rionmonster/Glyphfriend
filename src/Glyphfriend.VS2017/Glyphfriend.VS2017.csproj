@@ -46,7 +46,7 @@
     <!-- This is added to prevent forced migrations in Visual Studio 2012 and newer -->
     <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' Or '$(VisualStudioVersion)' != '15.0'">
+  <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' Or '$(VisualStudioVersion)' == '14.0'">
     <!-- This property disables extension deployment unless we are building inside VS 2017; required for AppVeyor -->
     <DeployExtension>False</DeployExtension>
   </PropertyGroup>
