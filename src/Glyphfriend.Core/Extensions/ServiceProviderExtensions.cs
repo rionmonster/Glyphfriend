@@ -20,7 +20,8 @@ namespace Glyphfriend.Extensions
         public static T LoadPackage<T>(this IVsShell shell) where T : Package
         {
             Guid guid = typeof(T).GUID;
-            ErrorHandler.ThrowOnFailure(shell.LoadPackage(ref guid, out var package));
+            IVsPackage package;
+            ErrorHandler.ThrowOnFailure(shell.LoadPackage(ref guid, out package));
             return (T)package;
         }
     }
