@@ -17,14 +17,10 @@ namespace Glyphfriend
 
         private bool _glyphsLoaded;
 
-        public override string CompletionType
-        {
-            get { return CompletionTypes.Values; }
-        }
+        public override string CompletionType => CompletionTypes.Values;
 
         public override IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
-            // Ensure glyphs are loaded
             if (!_glyphsLoaded)
             {
                 LoadGlyphs();
@@ -38,8 +34,6 @@ namespace Glyphfriend
             return completionItems;
         }
 
-        
-
         /// <summary>
         /// This method only exists to resolve possible race conditions when the package itself
         /// was not loaded prior to an autocompletion call.
@@ -49,7 +43,5 @@ namespace Glyphfriend
             var package = GlobalServiceProvider.GetShell().LoadPackage<VSPackage>();
             _glyphsLoaded = package != null;
         }
-
-        
     }
 }
