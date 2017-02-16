@@ -9,17 +9,15 @@ using System.Windows.Media.Imaging;
 namespace Glyphfriend
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [ProvideAutoLoad(HtmlFileLoadedContext)]
-    [ProvideUIContextRule(HtmlFileLoadedContext,
+    [ProvideAutoLoad(Constants.HtmlFileLoadedContext)]
+    [ProvideUIContextRule(Constants.HtmlFileLoadedContext,
         name: "HTML File Loaded",
         expression: "HtmlConfig",
         termNames: new[] { "HtmlConfig" },
         termValues: new[] { "ActiveEditorContentType:htmlx" })]
     public sealed class VSPackage : Package
     {
-        public const string HtmlFileLoadedContext = "21F5568E-A5DE-4821-AF39-F4F1049BB9CF";
-
-        internal static Dictionary<string, ImageSource> Glyphs { get; private set; }
+        internal Dictionary<string, ImageSource> Glyphs { get; private set; }
         internal static string AssemblyLocation => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
         protected override void Initialize()
