@@ -1,6 +1,9 @@
-version: 2.0.{build}
+version: 2.0.1.{build}
 configuration: Release
 image: Visual Studio 2017 RC
+branches:
+  only:
+    - develop
 
 install:
    - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
