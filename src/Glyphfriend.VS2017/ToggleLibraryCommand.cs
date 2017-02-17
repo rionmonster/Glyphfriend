@@ -72,11 +72,12 @@ namespace Glyphfriend
         private void ToggleLibrary(object sender, EventArgs e)
         {
             var command = (MenuCommand)sender;
-            // Update the supported libraries
 
             // See what library this is
             var libraryName = _libraries[command.CommandID.ID];
-            Constants.SupportedLibraries[libraryName].Enabled = !command.Checked;
+
+            // Update the settings
+            UserPreferences.ToggleLibrary(libraryName, !command.Checked);
 
             // Update the command to reflect which are enabled
             command.Checked = !command.Checked;

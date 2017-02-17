@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio.Settings;
+using Microsoft.VisualStudio.Shell;
 using ProtoBuf;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,7 @@ namespace Glyphfriend
 
         protected override void Initialize()
         {
+            UserPreferences.Initialize(this);
             DeserializeGlyphsFromBinary();
         }
 
