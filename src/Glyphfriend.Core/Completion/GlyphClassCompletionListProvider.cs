@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Utilities;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 
 namespace Glyphfriend
 {
@@ -27,7 +28,13 @@ namespace Glyphfriend
             }
 
             var glyphCompletionItems = new List<HtmlCompletion>();
-            foreach (var glyph in package.Glyphs)
+            // Get the enabled libraries (prefixes)
+            var enabledPrefixes = Constants.SupportedLibraries.Where(v => v.Value.Enabled)
+                                           .Select(k => k.Value.Prefix)
+                                           .ToList();
+            // Get the filtered set of enabled glyphs
+            var enabledGlyphs = package.Glyphs.Where(g => enabledPrefixes.Any(p => g.Key.StartsWith(p)));
+            foreach (var glyph in enabledGlyphs)
             {
                 glyphCompletionItems.Add(CreateItem(glyph.Key, glyph.Value, context.Session));
             }
