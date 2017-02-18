@@ -26,6 +26,17 @@ After installing the extension, that's it. Glyphfriend will automatically detect
 
 If you are looking for the Visual Studio 2017 version, you can [download it here](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2017).
 
+## Find an Issue?
+
+If you find an issue or encounter a problem with the extension, please don't hesitate to contact me or file an issue with the [Issues](https://github.com/Rionmonster/Glyphfriend/issues) are of this repository and I'll try to address it as soon as possible.
+
+**If you use Resharper, then Glyphfriend may not work properly (or at all)**. This is a known issue and is outside of my control as many of the APIs that Glyphfriend relies on are overridden by Resharper and thus don't allow the extension to ever be accessed by Visual Studio directly.
+
+The following two options have been successful with other Resharper users, so I would highly recommend trying either of them :
+
+* **Try disabling any HTML features within Resharper** - By disabling the HTML autocompletion and other features, this should hopefully allow for Glyphfriend to hook into the necessary APIs and work as expected.
+* **Consider downloading the [ResharperGlyphfriend Plug-in](https://github.com/Huntk23/ResharperGlyphfriend)** - A member of the community, [Kelby Hunt (Huntk23)](https://github.com/Huntk23) wrote a Resharper plug-in port of Glyphfriend, which attempts to implement much of the functionality of this extension. Consider downloading it if the previous approach didn't work as expected.
+
 ## Missing Something?
 
 Pull Requests are openly accepted and encouraged. 
