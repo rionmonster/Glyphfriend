@@ -11,26 +11,8 @@ namespace Glyphfriend
         public static ToggleLibraryCommand Instance { get; private set; }
 
         public const int CommandId = 0x0100;
-        public const int ToggleBootstrapCommand = 0x1101;
-        public const int ToggleEntypoCommand = 0x1102;
-        public const int ToggleFontAwesomeCommand = 0x1103;
-        public const int ToggleFoundationCommand = 0x1104;
-        public const int ToggleIonicCommand = 0x1105;
-        public const int ToggleMaterialDesignCommand = 0x1106;
-        public const int ToggleMetroUiCommand = 0x1107;
-        public const int ToggleOcticonsCommand = 0x1108;
+        
 
-        private Dictionary<int, string> _libraries = new Dictionary<int, string>()
-        {
-            { ToggleBootstrapCommand, "Bootstrap" },
-            { ToggleEntypoCommand, "Entypo" },
-            { ToggleFontAwesomeCommand, "Font Awesome" },
-            { ToggleFoundationCommand, "Foundation" },
-            { ToggleIonicCommand, "Ionic" },
-            { ToggleMaterialDesignCommand, "Material Design" },
-            { ToggleMetroUiCommand, "Metro UI" },
-            { ToggleOcticonsCommand, "Octicons" }
-        };
         private readonly Package _package;
         private IServiceProvider ServiceProvider => _package;
 
@@ -51,7 +33,7 @@ namespace Glyphfriend
             OleMenuCommandService commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
             {
-                foreach (var library in _libraries.Keys)
+                foreach (var library in Constants.SupportedLibraries.Keys)
                 {
                     var command = CreateCommand(CommandSet, library);
                     commandService.AddCommand(command);
@@ -62,10 +44,10 @@ namespace Glyphfriend
         private MenuCommand CreateCommand(Guid commandSet, int commandId)
         {
             // See what library this is
-            var libraryName = _libraries[commandId];
+            var library = Constants.SupportedLibraries[commandId];
             // See if it is enabled by default
             var menuCommandID = new CommandID(commandSet, commandId);
-            var command = new MenuCommand(ToggleLibrary, menuCommandID) { Checked = Constants.SupportedLibraries[libraryName].Enabled };
+            var command = new MenuCommand(ToggleLibrary, menuCommandID) { Checked = library.Enabled };
             return command;
         }
 
@@ -74,10 +56,7 @@ namespace Glyphfriend
             var command = (MenuCommand)sender;
 
             // See what library this is
-            var libraryName = _libraries[command.CommandID.ID];
-
-            // Update the settings
-            UserPreferences.ToggleLibrary(libraryName, !command.Checked);
+            UserPreferences.ToggleLibrary(command.CommandID.ID, !command.Checked);
 
             // Update the command to reflect which are enabled
             command.Checked = !command.Checked;

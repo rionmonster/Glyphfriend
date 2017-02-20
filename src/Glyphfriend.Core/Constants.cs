@@ -9,21 +9,38 @@ namespace Glyphfriend
         public const string HtmlFileLoadedContext = "21F5568E-A5DE-4821-AF39-F4F1049BB9CF";
         public static readonly Guid PackageGuid = new Guid("21F5568E-A5DE-4821-AF39-F4F1049BB9CF");
 
-        public static readonly Dictionary<string, SupportedLibrary> SupportedLibraries = new Dictionary<string, SupportedLibrary>(){
-            { "Bootstrap", new SupportedLibrary(){ Enabled = true, Prefix = "glyphicon-" } },
-            { "Entypo", new SupportedLibrary(){ Enabled = false, Prefix = "icon-" } },
-            { "Font Awesome", new SupportedLibrary(){ Enabled = false, Prefix = "fa-" } },
-            { "Foundation", new SupportedLibrary(){ Enabled = false, Prefix = "fi-" } },
-            { "Ionic", new SupportedLibrary(){ Enabled = false, Prefix = "ion-" } },
-            { "Material Design", new SupportedLibrary(){ Enabled = false, Prefix = "mdi-" } },
-            { "Metro UI", new SupportedLibrary(){ Enabled = false, Prefix = "mif-" } },
-            { "Octicons", new SupportedLibrary(){ Enabled = false, Prefix = "octicon-" } }
+        public const int ToggleBootstrapCommand = 0x1101;
+        public const int ToggleEntypoCommand = 0x1102;
+        public const int ToggleFontAwesomeCommand = 0x1103;
+        public const int ToggleFoundationCommand = 0x1104;
+        public const int ToggleIonicCommand = 0x1105;
+        public const int ToggleMaterialDesignCommand = 0x1106;
+        public const int ToggleMetroUiCommand = 0x1107;
+        public const int ToggleOcticonsCommand = 0x1108;
+
+        public static readonly Dictionary<int, SupportedLibrary> SupportedLibraries = new Dictionary<int, SupportedLibrary>(){
+            { ToggleBootstrapCommand, new SupportedLibrary("Bootstrap", "glyphicon-", true) },
+            { ToggleEntypoCommand, new SupportedLibrary("Entypo", "icon-", false) },
+            { ToggleFontAwesomeCommand, new SupportedLibrary("Font Awesome", "fa-", false) },
+            { ToggleFoundationCommand, new SupportedLibrary("Foundation", "fi-", false) },
+            { ToggleIonicCommand, new SupportedLibrary("Ionic", "ion-", false) },
+            { ToggleMaterialDesignCommand, new SupportedLibrary("Material Design", "mdi-", false) },
+            { ToggleMetroUiCommand, new SupportedLibrary("Metro UI", "mif-", false) },
+            { ToggleOcticonsCommand, new SupportedLibrary("Octicons", "octicon-", false) },
         };
     }
 
     class SupportedLibrary
     {
+        public string Name { get; set; }
         public bool Enabled { get; set; }
         public string Prefix { get; set; }
+
+        public SupportedLibrary(string name, string prefix, bool enabled)
+        {
+            Name = name;
+            Prefix = prefix;
+            Enabled = enabled;
+        }
     }
 }

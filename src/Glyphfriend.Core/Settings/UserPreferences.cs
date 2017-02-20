@@ -16,10 +16,12 @@ namespace Glyphfriend
             InitializeSupportedLibraries();
         }
 
-        public static void ToggleLibrary(string library, bool isEnabled)
+        public static void ToggleLibrary(int libraryId, bool isEnabled)
         {
-            Settings.SetBoolean(Constants.UserSettingsLibrary, library, isEnabled);
-            Constants.SupportedLibraries[library].Enabled = isEnabled;
+            // Resolve the library
+            var library = Constants.SupportedLibraries[libraryId];
+            Settings.SetBoolean(Constants.UserSettingsLibrary, library.Name, isEnabled);
+            Constants.SupportedLibraries[libraryId].Enabled = isEnabled;
         }
 
         private static void EnsureSettingsStoreExists()
@@ -33,18 +35,18 @@ namespace Glyphfriend
         private static void InitializeSupportedLibraries()
         {
             // At this point we know the collection exists, so check support for each library available
-            foreach (var library in Constants.SupportedLibraries.Keys)
+            foreach (var libraryId in Constants.SupportedLibraries.Keys)
             {
+                var library = Constants.SupportedLibraries[libraryId];
                 // Check if this library exists, and if not include its key
-                if (!Settings.PropertyExists(Constants.UserSettingsLibrary, library))
+                if (!Settings.PropertyExists(Constants.UserSettingsLibrary, library.Name))
                 {
                     // Store the default value
-                    Settings.SetBoolean(Constants.UserSettingsLibrary, library, Constants.SupportedLibraries[library].Enabled);
+                    Settings.SetBoolean(Constants.UserSettingsLibrary, library.Name, library.Enabled);
                 }
                 else
                 {
-                    // Set the available value
-                    Constants.SupportedLibraries[library].Enabled = Settings.GetBoolean(Constants.UserSettingsLibrary, library);
+                    library.Enabled = Settings.GetBoolean(Constants.UserSettingsLibrary, library.Name);
                 }
             }
         }
