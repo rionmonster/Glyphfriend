@@ -1,17 +1,24 @@
 ﻿using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Settings;
+using System.Linq;
 
 namespace Glyphfriend
 {
-    public class UserPreferences
+    /// <summary>
+    /// This class handles managing user preferences within the extension, specifically
+    /// the enabling/disabling of certain libraries which in turn affects which glyphs are
+    /// served to the user
+    /// </summary>
+    public static class UserPreferences
     {
         public static WritableSettingsStore Settings { get; private set; }
+        private static VSPackage Package;
 
         public static void Initialize(Package package)
         {
-            var settingsManager = new ShellSettingsManager(package);
-            Settings = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
+            Package = (VSPackage)package;
+            Settings = new ShellSettingsManager(package).GetWritableSettingsStore(SettingsScope.UserSettings);
             EnsureSettingsStoreExists();
             InitializeSupportedLibraries();
         }
@@ -19,9 +26,15 @@ namespace Glyphfriend
         public static void ToggleLibrary(int libraryId, bool isEnabled)
         {
             // Resolve the library
-            var library = Constants.SupportedLibraries[libraryId];
+            var library = Constants.Libraries[libraryId];
+            // Update settings
             Settings.SetBoolean(Constants.UserSettingsLibrary, library.Name, isEnabled);
-            Constants.SupportedLibraries[libraryId].Enabled = isEnabled;
+            // Update menus
+            Constants.Libraries[libraryId].Enabled = isEnabled;
+            // Update glyphs
+            Package.Glyphs.Where(g => g.Library == library.Name)
+                           .Select(g => { g.Enabled = isEnabled; return g; })
+                           .ToList();
         }
 
         private static void EnsureSettingsStoreExists()
@@ -35,19 +48,19 @@ namespace Glyphfriend
         private static void InitializeSupportedLibraries()
         {
             // At this point we know the collection exists, so check support for each library available
-            foreach (var libraryId in Constants.SupportedLibraries.Keys)
+            foreach (var libraryId in Constants.Libraries.Keys)
             {
-                var library = Constants.SupportedLibraries[libraryId];
-                // Check if this library exists, and if not include its key
+                var library = Constants.Libraries[libraryId];
+                // Check if this library exists, and if not, set its default value from the extension
                 if (!Settings.PropertyExists(Constants.UserSettingsLibrary, library.Name))
                 {
-                    // Store the default value
                     Settings.SetBoolean(Constants.UserSettingsLibrary, library.Name, library.Enabled);
                 }
                 else
                 {
                     library.Enabled = Settings.GetBoolean(Constants.UserSettingsLibrary, library.Name);
                 }
+                ToggleLibrary(libraryId, library.Enabled);
             }
         }
     }

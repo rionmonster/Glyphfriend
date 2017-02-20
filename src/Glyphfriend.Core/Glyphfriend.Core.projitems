@@ -13,7 +13,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphClassCompletionListProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceProviderExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UserPreferences.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glyph.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlyphLibrary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\UserPreferences.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VSPackage.cs" />
   </ItemGroup>
 </Project>

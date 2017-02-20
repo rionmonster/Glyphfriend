@@ -9,6 +9,11 @@ namespace Glyphfriend
         public const string HtmlFileLoadedContext = "21F5568E-A5DE-4821-AF39-F4F1049BB9CF";
         public static readonly Guid PackageGuid = new Guid("21F5568E-A5DE-4821-AF39-F4F1049BB9CF");
 
+        /// <summary>
+        /// These commands are associated with the items found within the VSCT files and handles configuring
+        /// the menu items that appear. Thus any new libraries will need to have key defined here and 
+        /// a button set within the VSCT file as well.
+        /// </summary>
         public const int ToggleBootstrapCommand = 0x1101;
         public const int ToggleEntypoCommand = 0x1102;
         public const int ToggleFontAwesomeCommand = 0x1103;
@@ -17,30 +22,24 @@ namespace Glyphfriend
         public const int ToggleMaterialDesignCommand = 0x1106;
         public const int ToggleMetroUiCommand = 0x1107;
         public const int ToggleOcticonsCommand = 0x1108;
+        // public const int ToggleYourLibraryHereCommand = 0x1109;
 
-        public static readonly Dictionary<int, SupportedLibrary> SupportedLibraries = new Dictionary<int, SupportedLibrary>(){
-            { ToggleBootstrapCommand, new SupportedLibrary("Bootstrap", "glyphicon-", true) },
-            { ToggleEntypoCommand, new SupportedLibrary("Entypo", "icon-", false) },
-            { ToggleFontAwesomeCommand, new SupportedLibrary("Font Awesome", "fa-", false) },
-            { ToggleFoundationCommand, new SupportedLibrary("Foundation", "fi-", false) },
-            { ToggleIonicCommand, new SupportedLibrary("Ionic", "ion-", false) },
-            { ToggleMaterialDesignCommand, new SupportedLibrary("Material Design", "mdi-", false) },
-            { ToggleMetroUiCommand, new SupportedLibrary("Metro UI", "mif-", false) },
-            { ToggleOcticonsCommand, new SupportedLibrary("Octicons", "octicon-", false) },
+        /// <summary>
+        /// These are all of the supported libraries in Glyphfriend along with their associated default
+        /// values (i.e. only Bootstrap is enabled by default).
+        /// </summary>
+        public static readonly Dictionary<int, GlyphLibrary> Libraries = new Dictionary<int, GlyphLibrary>(){
+            { ToggleBootstrapCommand, new GlyphLibrary("Bootstrap",  true) },
+            { ToggleEntypoCommand, new GlyphLibrary("Entypo",  false) },
+            { ToggleFontAwesomeCommand, new GlyphLibrary("Font Awesome",  false) },
+            { ToggleFoundationCommand, new GlyphLibrary("Foundation",  false) },
+            { ToggleIonicCommand, new GlyphLibrary("Ionic", false) },
+            { ToggleMaterialDesignCommand, new GlyphLibrary("Material Design", false) },
+            { ToggleMetroUiCommand, new GlyphLibrary("Metro UI",  false) },
+            { ToggleOcticonsCommand, new GlyphLibrary("Octicons", false) },
+            // { ToggleYourLibraryHereCommand, new GlyphLibrary("Your Library", false) }
         };
     }
 
-    class SupportedLibrary
-    {
-        public string Name { get; set; }
-        public bool Enabled { get; set; }
-        public string Prefix { get; set; }
-
-        public SupportedLibrary(string name, string prefix, bool enabled)
-        {
-            Name = name;
-            Prefix = prefix;
-            Enabled = enabled;
-        }
-    }
+    
 }

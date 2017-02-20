@@ -30,10 +30,10 @@ namespace Glyphfriend
 
             _package = package;
 
-            OleMenuCommandService commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            OleMenuCommandService commandService = ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
             {
-                foreach (var library in Constants.SupportedLibraries.Keys)
+                foreach (var library in Constants.Libraries.Keys)
                 {
                     var command = CreateCommand(CommandSet, library);
                     commandService.AddCommand(command);
@@ -44,7 +44,7 @@ namespace Glyphfriend
         private MenuCommand CreateCommand(Guid commandSet, int commandId)
         {
             // See what library this is
-            var library = Constants.SupportedLibraries[commandId];
+            var library = Constants.Libraries[commandId];
             // See if it is enabled by default
             var menuCommandID = new CommandID(commandSet, commandId);
             var command = new MenuCommand(ToggleLibrary, menuCommandID) { Checked = library.Enabled };
@@ -54,12 +54,8 @@ namespace Glyphfriend
         private void ToggleLibrary(object sender, EventArgs e)
         {
             var command = (MenuCommand)sender;
-
-            // See what library this is
-            UserPreferences.ToggleLibrary(command.CommandID.ID, !command.Checked);
-
-            // Update the command to reflect which are enabled
             command.Checked = !command.Checked;
+            UserPreferences.ToggleLibrary(command.CommandID.ID, command.Checked);
         }
     }
 }

@@ -28,15 +28,11 @@ namespace Glyphfriend
             }
 
             var glyphCompletionItems = new List<HtmlCompletion>();
-            // Get the enabled libraries (prefixes)
-            var enabledPrefixes = Constants.SupportedLibraries.Where(v => v.Value.Enabled)
-                                           .Select(k => k.Value.Prefix)
-                                           .ToList();
             // Get the filtered set of enabled glyphs
-            var enabledGlyphs = package.Glyphs.Where(g => enabledPrefixes.Any(p => g.Key.StartsWith(p)));
+            var enabledGlyphs = package.Glyphs.Where(g => g.Enabled);
             foreach (var glyph in enabledGlyphs)
             {
-                glyphCompletionItems.Add(CreateItem(glyph.Key, glyph.Value, context.Session));
+                glyphCompletionItems.Add(CreateItem(glyph.Name, glyph.Image, context.Session));
             }
             return glyphCompletionItems;
         }
