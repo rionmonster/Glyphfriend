@@ -13,23 +13,25 @@ namespace Glyphfriend.Packager
 
         private static void GenerateBinaryGlyphsFile()
         {
-            var glyphDictionary = ConvertGlyphsToDictionary();
-            BinarySerializeGlyphsToFile(glyphDictionary);
+            var glyphs = ConvertGlyphsToList();
+            BinarySerializeGlyphsToFile(glyphs);
         }
 
-        private static Dictionary<string, byte[]> ConvertGlyphsToDictionary()
+        private static IList<Glyph> ConvertGlyphsToList()
         {
-            var glyphs = new Dictionary<string, byte[]>();
+            var glyphs = new List<Glyph>();
             var glyphDirectory = new DirectoryInfo("../../Glyphs");
-            foreach (var glyph in glyphDirectory.EnumerateFiles("*.png", SearchOption.AllDirectories))
+            foreach (var image in glyphDirectory.EnumerateFiles("*.png", SearchOption.AllDirectories))
             {
-                var glyphContent = StreamHelpers.ReadFully(new FileStream(glyph.FullName, FileMode.Open));
-                glyphs.Add(Path.GetFileNameWithoutExtension(glyph.Name), glyphContent);
+                var imageContent = StreamHelpers.ReadFully(new FileStream(image.FullName, FileMode.Open));
+                var glyph = new Glyph(Path.GetFileNameWithoutExtension(image.Name), image.Directory.Name, imageContent);
+
+                glyphs.Add(glyph);
             }
             return glyphs;
         }
 
-        private static void BinarySerializeGlyphsToFile(Dictionary<string, byte[]> glyphs)
+        private static void BinarySerializeGlyphsToFile(IList<Glyph> glyphs)
         {
             using (var ms = new FileStream("../../Binary/glyphs.bin", FileMode.Create))
             {
