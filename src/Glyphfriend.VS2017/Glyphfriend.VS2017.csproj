@@ -82,10 +82,8 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <Visible>False</Visible>
     </Content>
-    <Content Include="Resources\ToggleLibraryCommand.png" />
-    <Content Include="Resources\ToggleLibraryCommandPackage.ico" />
     <VSCTCompile Include="ToggleLibraryCommandPackage.vsct">
-      <ResourceName>Menus.ctmenu</ResourceName>
+      <ResourceName>GlyphfriendHtmlMenu.ctmenu</ResourceName>
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
