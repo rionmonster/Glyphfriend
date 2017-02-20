@@ -55,7 +55,7 @@ namespace Glyphfriend
         {
             var command = (MenuCommand)sender;
             command.Checked = !command.Checked;
-            UserPreferences.ToggleLibrary(command.CommandID.ID, command.Checked);
+            GlyphfriendPreferences.ToggleLibrary(command.CommandID.ID, command.Checked);
         }
     }
 }

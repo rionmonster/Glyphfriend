@@ -20,7 +20,7 @@ namespace Glyphfriend
         protected override void Initialize()
         {
             DeserializeGlyphsFromBinary();
-            UserPreferences.Initialize(this);
+            GlyphfriendPreferences.Initialize(this);
         }
 
         private void DeserializeGlyphsFromBinary()

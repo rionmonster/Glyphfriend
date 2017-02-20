@@ -10,7 +10,7 @@ namespace Glyphfriend
     /// the enabling/disabling of certain libraries which in turn affects which glyphs are
     /// served to the user
     /// </summary>
-    public static class UserPreferences
+    public static class GlyphfriendPreferences
     {
         public static WritableSettingsStore Settings { get; private set; }
         private static VSPackage Package;
