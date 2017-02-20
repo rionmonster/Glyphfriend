@@ -1,18 +1,13 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using Microsoft.VisualStudio.Shell;
-using System.Collections.Generic;
 
 namespace Glyphfriend
 {
     internal sealed class ToggleLibraryCommand
     {
-        public static readonly Guid CommandSet = new Guid("faf962bd-d32b-4c73-a5d3-fcdf95277a21");
         public static ToggleLibraryCommand Instance { get; private set; }
-
-        public const int CommandId = 0x0100;
         
-
         private readonly Package _package;
         private IServiceProvider ServiceProvider => _package;
 
@@ -23,19 +18,14 @@ namespace Glyphfriend
 
         private ToggleLibraryCommand(Package package)
         {
-            if (package == null)
-            {
-                throw new ArgumentNullException("package");
-            }
+            _package = package ?? throw new ArgumentNullException("package");
 
-            _package = package;
-
-            OleMenuCommandService commandService = ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            var commandService = ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
             {
                 foreach (var library in Constants.Libraries.Keys)
                 {
-                    var command = CreateCommand(CommandSet, library);
+                    var command = CreateCommand(Constants.ToggleLibraryCommandSet, library);
                     commandService.AddCommand(command);
                 }
             }
@@ -43,12 +33,10 @@ namespace Glyphfriend
 
         private MenuCommand CreateCommand(Guid commandSet, int commandId)
         {
-            // See what library this is
             var library = Constants.Libraries[commandId];
-            // See if it is enabled by default
-            var menuCommandID = new CommandID(commandSet, commandId);
-            var command = new MenuCommand(ToggleLibrary, menuCommandID) { Checked = library.Enabled };
-            return command;
+            // Generate the command that will map this particular library to the appropriate button within the
+            // .vsct file
+            return new MenuCommand(ToggleLibrary, new CommandID(commandSet, commandId)) { Checked = library.Enabled };
         }
 
         private void ToggleLibrary(object sender, EventArgs e)

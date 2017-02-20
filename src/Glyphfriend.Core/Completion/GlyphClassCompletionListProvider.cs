@@ -1,5 +1,4 @@
-﻿using Glyphfriend.Extensions;
-using Microsoft.Html.Editor.Completion;
+﻿using Microsoft.Html.Editor.Completion;
 using Microsoft.Html.Editor.Completion.Def;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Language.Intellisense;

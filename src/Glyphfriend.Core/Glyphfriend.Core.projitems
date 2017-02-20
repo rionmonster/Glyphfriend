@@ -9,6 +9,7 @@
     <Import_RootNamespace>Glyphfriend.Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ToggleLibraryCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphClassCompletionListProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceProviderExtensions.cs" />
