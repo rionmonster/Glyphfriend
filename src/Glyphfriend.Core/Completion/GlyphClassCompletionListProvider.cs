@@ -39,11 +39,6 @@ namespace Glyphfriend
             return glyphCompletionItems;
         }
 
-        private HtmlCompletion CreateItem(string name, ImageSource icon, ICompletionSession session)
-        {
-            return new HtmlCompletion(name, name, name, icon, null, session);
-        }
-
         private IVsPackage EnsurePackageLoaded()
         {
             IVsPackage package;
@@ -53,6 +48,11 @@ namespace Glyphfriend
                 package = GlobalServiceProvider.GetShell().LoadPackage<VSPackage>();
             }
             return package;
+        }
+
+        private HtmlCompletion CreateItem(string name, ImageSource icon, ICompletionSession session)
+        {
+            return new HtmlCompletion(name, name, name, icon, null, session);
         }
     }
 }
