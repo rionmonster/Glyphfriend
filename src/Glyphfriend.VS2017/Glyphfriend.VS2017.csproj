@@ -59,7 +59,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ToggleLibraryCommandPackage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,9 +80,6 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <Visible>False</Visible>
     </Content>
-    <VSCTCompile Include="ToggleLibraryCommandPackage.vsct">
-      <ResourceName>GlyphfriendHtmlMenu.ctmenu</ResourceName>
-    </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -227,6 +223,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <VSCTCompile Include="..\Glyphfriend.Core\GlyphfriendMenu.vsct">
+      <Link>GlyphfriendMenu.vsct</Link>
+      <ResourceName>GlyphfriendMenu.ctmenu</ResourceName>
+      <Visible>False</Visible>
+    </VSCTCompile>
     <EmbeddedResource Include="VSPackage.resx">
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>

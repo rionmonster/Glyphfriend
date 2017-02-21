@@ -9,7 +9,7 @@ namespace Glyphfriend
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [ProvideAutoLoad(Constants.HtmlFileLoadedContext)]
     [Guid(Constants.HtmlFileLoadedContext)]
-    [ProvideMenuResource("GlyphfriendHtmlMenu.ctmenu", 1)]
+    [ProvideMenuResource("GlyphfriendMenu.ctmenu", 1)]
     [ProvideUIContextRule(Constants.HtmlFileLoadedContext,
         name: "HTML File Loaded",
         expression: "HtmlConfig",
