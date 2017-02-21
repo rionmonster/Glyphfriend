@@ -18,7 +18,7 @@ namespace Glyphfriend
 
         private ToggleLibraryCommand(Package package)
         {
-            _package = package ?? throw new ArgumentNullException("package");
+            _package = package;
 
             var commandService = ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
