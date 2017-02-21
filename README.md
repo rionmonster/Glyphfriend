@@ -29,6 +29,14 @@ After installing the extension, that's it. Glyphfriend will automatically detect
 
 ![Glyphfriend in Action](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-in-action.gif)
 
+## Setting Preferences
+
+By default, Glyphfriend has support for Bootstrap Glyphicons enabled by default, however you can easily select the libraries that you prefer to use by simply **right-clicking and selecting the preferred library from the Glyphfriend context menu in any HTML-supported file** as seen below :
+
+![Glyphfriend Library Toggling](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-toggling-support.gif)
+
+It's important to note that **library preferences are persistent across Visual Studio sessions.** Basically, you will only need to define which libraries that you want to use and they will be available the next time you open Visual Studio.
+
 ## What's In Here?
 
 Within this repository you'll find all of the necessary projects that make Glyphfriend work, which can be described below :
@@ -42,7 +50,9 @@ Within this repository you'll find all of the necessary projects that make Glyph
 
 If you find an issue or encounter a problem with the extension, please don't hesitate to contact me or file an issue with the [Issues](https://github.com/Rionmonster/Glyphfriend/issues) are of this repository and I'll try to address it as soon as possible.
 
-**If you use Resharper, then Glyphfriend may not work properly (or at all)**. This is a known issue and is outside of my control as many of the APIs that Glyphfriend relies on are overridden by Resharper and thus don't allow the extension to ever be accessed by Visual Studio directly.
+> **NOTE: If you use Resharper, then Glyphfriend may not work properly (or at all), so read this**. 
+
+Issues with Resharper and Glyphfriend have been widely reported (enough to warrant a spot here) and are outside of my control. Many of the APIs that Glyphfriend relies on are overridden by Resharper and thus don't allow the extension to ever be accessed by Visual Studio directly.
 
 The following two options have been successful with other Resharper users, so I would highly recommend trying either of them :
 
