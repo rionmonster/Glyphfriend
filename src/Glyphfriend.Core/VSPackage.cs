@@ -2,11 +2,14 @@
 using ProtoBuf;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Glyphfriend
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [ProvideAutoLoad(Constants.HtmlFileLoadedContext)]
+    [Guid(Constants.HtmlFileLoadedContext)]
+    [ProvideMenuResource("GlyphfriendHtmlMenu.ctmenu", 1)]
     [ProvideUIContextRule(Constants.HtmlFileLoadedContext,
         name: "HTML File Loaded",
         expression: "HtmlConfig",
@@ -20,6 +23,7 @@ namespace Glyphfriend
         protected override void Initialize()
         {
             DeserializeGlyphsFromBinary();
+            ToggleLibraryCommand.Initialize(this);
             GlyphfriendPreferences.Initialize(this);
         }
 

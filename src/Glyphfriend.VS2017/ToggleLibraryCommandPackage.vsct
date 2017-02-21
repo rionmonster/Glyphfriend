@@ -75,7 +75,7 @@
     </CommandPlacement>
   </CommandPlacements>
   <Symbols>
-    <GuidSymbol name="guidToggleLibraryCommandPackage" value="{64130043-0eb2-4525-92bc-f74c6c2039d9}" />
+    <GuidSymbol name="guidToggleLibraryCommandPackage" value="{21F5568E-A5DE-4821-AF39-F4F1049BB9CF}" />
     <GuidSymbol name="guidTopMenu" value="{f321cac5-e101-459b-b24e-ba72ad25a2f3}">
       <IDSymbol name="TopMenu" value="0x3001" />
     </GuidSymbol>
