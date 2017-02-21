@@ -23,8 +23,8 @@ namespace Glyphfriend
         protected override void Initialize()
         {
             DeserializeGlyphsFromBinary();
-            ToggleLibraryCommand.Initialize(this);
             GlyphfriendPreferences.Initialize(this);
+            ToggleLibraryCommand.Initialize(this);
         }
 
         private void DeserializeGlyphsFromBinary()
