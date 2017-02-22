@@ -228,7 +228,7 @@
       <Visible>False</Visible>
     </VSCTCompile>
     <EmbeddedResource Include="..\Glyphfriend.Core\VSPackage.resx">
-      <Link>VSPackage.vsct</Link>
+      <Link>VSPackage.resx</Link>
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>
       <!-- We only want to see this in the Core Project -->
