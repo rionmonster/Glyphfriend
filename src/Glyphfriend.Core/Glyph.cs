@@ -11,7 +11,7 @@ namespace Glyphfriend
     /// the contents after it has been deserialized.
     /// </summary>
     [ProtoContract]
-    class Glyph
+    internal class Glyph
     {
         [ProtoMember(1)]
         public string Name { get; private set; }
@@ -30,7 +30,6 @@ namespace Glyphfriend
 
         public Glyph()
         {
-
         }
 
         public Glyph(string name, string library, byte[] imageContent)
@@ -51,7 +50,7 @@ namespace Glyphfriend
                 image.CacheOption = BitmapCacheOption.OnLoad;
                 image.EndInit();
             }
-            Image =  image as ImageSource;
+            Image = image as ImageSource;
         }
     }
 }

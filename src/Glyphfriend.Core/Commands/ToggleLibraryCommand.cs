@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Shell;
+using System;
 using System.ComponentModel.Design;
-using Microsoft.VisualStudio.Shell;
 
 namespace Glyphfriend
 {
     internal sealed class ToggleLibraryCommand
     {
         public static ToggleLibraryCommand Instance { get; private set; }
-        
+
         private readonly Package _package;
         private IServiceProvider ServiceProvider => _package;
 

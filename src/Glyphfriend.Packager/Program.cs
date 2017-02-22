@@ -4,9 +4,9 @@ using System.IO;
 
 namespace Glyphfriend.Packager
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             GenerateBinaryGlyphsFile();
         }

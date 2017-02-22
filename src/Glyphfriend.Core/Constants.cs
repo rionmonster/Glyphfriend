@@ -3,22 +3,24 @@ using System.Collections.Generic;
 
 namespace Glyphfriend
 {
-    class Constants
+    internal class Constants
     {
         /// <summary>
         /// These settings are specific to Glyphfriend itself and its associated commands
         /// </summary>
         public const string UserSettingsLibrary = "GlyphfriendLibraries";
+
         public const string HtmlFileLoadedContext = "21F5568E-A5DE-4821-AF39-F4F1049BB9CF";
         public static readonly Guid PackageGuid = new Guid("21F5568E-A5DE-4821-AF39-F4F1049BB9CF");
         public static readonly Guid ToggleLibraryCommandSet = new Guid("faf962bd-d32b-4c73-a5d3-fcdf95277a21");
 
         /// <summary>
         /// These commands are associated with the items found within the VSCT files and handles configuring
-        /// the menu items that appear. Thus any new libraries will need to have key defined here and 
+        /// the menu items that appear. Thus any new libraries will need to have key defined here and
         /// a button set within the VSCT file as well.
         /// </summary>
         public const int ToggleLibraryCommandId = 0x0100;
+
         public const int ToggleBootstrapCommand = 0x1101;
         public const int ToggleEntypoCommand = 0x1102;
         public const int ToggleFontAwesomeCommand = 0x1103;
@@ -45,6 +47,4 @@ namespace Glyphfriend
             // { ToggleYourLibraryHereCommand, new GlyphLibrary("Your Library", false) }
         };
     }
-
-    
 }

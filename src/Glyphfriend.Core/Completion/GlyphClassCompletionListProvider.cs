@@ -14,16 +14,17 @@ namespace Glyphfriend
 {
     [HtmlCompletionProvider(CompletionTypes.Values, "*", "class")]
     [ContentType("htmlx")]
-    class GlyphClassCompletionListProvider : IHtmlCompletionListProvider
+    internal class GlyphClassCompletionListProvider : IHtmlCompletionListProvider
     {
         [Import]
-        protected SVsServiceProvider GlobalServiceProvider { get;  private set; }
+        protected SVsServiceProvider GlobalServiceProvider { get; private set; }
+
         public string CompletionType => CompletionTypes.Values;
 
         public IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
             VSPackage package = (VSPackage)EnsurePackageLoaded();
-            if(package == null)
+            if (package == null)
             {
                 return new List<HtmlCompletion>();
             }

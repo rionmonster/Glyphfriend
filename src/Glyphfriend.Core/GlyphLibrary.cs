@@ -4,7 +4,7 @@
     /// This class presents a single Glyph library and simply stores the name of the library and
     /// if it is enabled or not.
     /// </summary>
-    class GlyphLibrary
+    internal class GlyphLibrary
     {
         public string Name { get; set; }
         public bool Enabled { get; set; }
