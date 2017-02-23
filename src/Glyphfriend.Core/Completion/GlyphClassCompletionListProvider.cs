@@ -41,13 +41,7 @@ namespace Glyphfriend
 
         private IVsPackage EnsurePackageLoaded()
         {
-            IVsPackage package;
-            // If the package failed to load or is null, explicitly load it
-            if (!ErrorHandler.Succeeded(GlobalServiceProvider.GetShell().IsPackageLoaded(Constants.PackageGuid, out package)) || package == null)
-            {
-                package = GlobalServiceProvider.GetShell().LoadPackage<VSPackage>();
-            }
-            return package;
+            return GlobalServiceProvider.GetShell().LoadPackage<VSPackage>();
         }
 
         private HtmlCompletion CreateItem(string name, ImageSource icon, ICompletionSession session)
