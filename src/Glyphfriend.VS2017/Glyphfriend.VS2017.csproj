@@ -82,6 +82,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <SuppressFromVsix Include="Microsoft.CSS.Core.dll" />
+    <SuppressFromVsix Include="Microsoft.CSS.Editor.dll" />
+    <SuppressFromVsix Include="Microsoft.Html.Core.dll" />
+    <SuppressFromVsix Include="Microsoft.Html.Editor.dll" />
+    <SuppressFromVsix Include="Microsoft.Web.Core.dll" />
+    <SuppressFromVsix Include="Microsoft.Web.Editor.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
