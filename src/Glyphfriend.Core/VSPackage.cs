@@ -22,6 +22,7 @@ namespace Glyphfriend
 
         protected override void Initialize()
         {
+            Logger.Initialize(this, "Glyphfriend");
             DeserializeGlyphsFromBinary();
             GlyphfriendPreferences.Initialize(this);
             ToggleLibraryCommand.Initialize(this);
@@ -30,6 +31,7 @@ namespace Glyphfriend
         private void DeserializeGlyphsFromBinary()
         {
             Glyphs = DeserializeBinaryGlyphs();
+            Logger.Log($"{Glyphs.Count} glyphs loaded.");
         }
 
         private List<Glyph> DeserializeBinaryGlyphs()

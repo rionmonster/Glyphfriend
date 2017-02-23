@@ -26,12 +26,14 @@ namespace Glyphfriend
             VSPackage package = (VSPackage)EnsurePackageLoaded();
             if (package == null)
             {
+                Logger.Log("Package failed to load properly!");
                 return new List<HtmlCompletion>();
             }
 
             var glyphCompletionItems = new List<HtmlCompletion>();
             // Get the filtered set of enabled glyphs
             var enabledGlyphs = package.Glyphs.Where(g => g.Enabled);
+            Logger.Log($"Serving all {enabledGlyphs.Count() } enabled glyphs.");
             foreach (var glyph in enabledGlyphs)
             {
                 glyphCompletionItems.Add(CreateItem(glyph.Name, glyph.Image, context.Session));

@@ -42,6 +42,7 @@ namespace Glyphfriend
             if (!Settings.CollectionExists(Constants.UserSettingsLibrary))
             {
                 Settings.CreateCollection(Constants.UserSettingsLibrary);
+                Logger.Log($"Glyphfriend preferences created!");
             }
         }
 
@@ -60,6 +61,7 @@ namespace Glyphfriend
                 {
                     library.Enabled = Settings.GetBoolean(Constants.UserSettingsLibrary, library.Name);
                 }
+                Logger.Log($"Library '{library.Name}' is {(library.Enabled ? "enabled" : "disabled")}.");
                 ToggleLibrary(libraryId, library.Enabled);
             }
         }
