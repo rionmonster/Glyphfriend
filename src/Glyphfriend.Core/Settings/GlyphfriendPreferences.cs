@@ -13,11 +13,11 @@ namespace Glyphfriend
     public static class GlyphfriendPreferences
     {
         public static WritableSettingsStore Settings { get; private set; }
-        private static VSPackage Package;
+        private static VSPackage _package;
 
         public static void Initialize(Package package)
         {
-            Package = (VSPackage)package;
+            _package = (VSPackage)package;
             Settings = new ShellSettingsManager(package).GetWritableSettingsStore(SettingsScope.UserSettings);
             EnsureSettingsStoreExists();
             InitializeSupportedLibraries();
@@ -32,7 +32,7 @@ namespace Glyphfriend
             // Update menus
             Constants.Libraries[libraryId].Enabled = isEnabled;
             // Update glyphs
-            Package.Glyphs.Where(g => g.Library == library.Name)
+            _package.Glyphs.Where(g => g.Library == library.Name)
                            .Select(g => { g.Enabled = isEnabled; return g; })
                            .ToList();
         }
