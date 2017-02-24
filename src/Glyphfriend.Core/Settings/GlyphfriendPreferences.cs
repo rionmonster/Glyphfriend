@@ -44,6 +44,10 @@ namespace Glyphfriend
                 Settings.CreateCollection(Constants.UserSettingsLibrary);
                 Logger.Log($"Glyphfriend preferences created!");
             }
+            else
+            {
+                Logger.Log($"Glyphfriend preferences loaded!");
+            }
         }
 
         private static void InitializeSupportedLibraries()
