@@ -36,7 +36,7 @@ namespace Glyphfriend
             {
                 if (EnsurePane())
                 {
-                    _pane.OutputStringThreadSafe(DateTime.Now + ": " + message + Environment.NewLine);
+                    _pane.OutputStringThreadSafe($"{DateTime.Now}: {message} {Environment.NewLine}");
                 }
             }
             catch (Exception ex)
