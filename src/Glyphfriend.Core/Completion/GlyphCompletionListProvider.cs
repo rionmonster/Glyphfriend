@@ -1,13 +1,11 @@
 ﻿using Microsoft.Html.Editor.Completion;
 using Microsoft.Html.Editor.Completion.Def;
-using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Utilities;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Windows.Media;
 
 namespace Glyphfriend
 {

@@ -7,8 +7,8 @@ using System.Runtime.InteropServices;
 namespace Glyphfriend
 {
     /// <summary>
-    /// This is the core package and entry point for Glyphfriend and it handles 
-    /// loading all of the underlying components of the extension. It is not 
+    /// This is the core package and entry point for Glyphfriend and it handles
+    /// loading all of the underlying components of the extension. It is not
     /// intialized until a valid HTMLX file (i.e. HTML, CSHTML, etc.) is opened.
     /// </summary>
     [PackageRegistration(UseManagedResourcesOnly = true)]
@@ -27,7 +27,7 @@ namespace Glyphfriend
 
         protected override void Initialize()
         {
-            Logger.Initialize(this,"Glyphfriend");
+            Logger.Initialize(this, "Glyphfriend");
             DeserializeGlyphsFromBinary();
             GlyphfriendPreferences.Initialize(this);
             ToggleLibraryCommand.Initialize(this);

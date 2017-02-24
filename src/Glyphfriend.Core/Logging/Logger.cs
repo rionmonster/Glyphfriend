@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.Shell.Interop;
+﻿using Microsoft.VisualStudio.Shell.Interop;
+using System;
 
 namespace Glyphfriend
 {
