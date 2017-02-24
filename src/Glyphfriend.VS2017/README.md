@@ -20,7 +20,7 @@ Glyphfriend is a Visual Studio 2017 extension to enhance the existing Intellisen
 
 You can [download and install Glyphfriend from the Visual Studio Gallery here](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2017) or simply search for it within the **Tools > Extensions and Updates** area of Visual Studio.
 
-After installing the extension, that's it. Glyphfriend will automatically detect when a valid HTML flavored file is opened and it will add all of the supported icons to the autocompletion within `class` attributes as seen below :
+After installing the extension, that's it. Glyphfriend will automatically detect when a valid HTML flavored file is opened and it will add all of the supported icons to the autocompletion within `class` attributes as seen below:
 
 ![Glyphfriend in Action](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-in-action.gif)
 
@@ -28,7 +28,7 @@ If you are looking for the Visual Studio 2015 version, you can [download it here
 
 ## Setting Preferences
 
-By default, Glyphfriend has support for Bootstrap Glyphicons enabled by default, however you can easily select the libraries that you prefer to use by simply **right-clicking and selecting the preferred library from the Glyphfriend context menu in any HTML-supported file** as seen below :
+By default, Glyphfriend has support for Bootstrap Glyphicons enabled by default, however you can easily select the libraries that you prefer to use by simply **right-clicking and selecting the preferred library from the Glyphfriend context menu in any HTML-supported file** as seen below:
 
 ![Glyphfriend Library Toggling](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-toggling-support.gif)
 
@@ -61,7 +61,7 @@ I would like to give a special shout-out to several members of the community, in
 * **[Justin Clarebert](https://github.com/justcla)**
 * **[Alex Eyler](https://github.com/AlexEyler)**
 * **[Mads Kristensen](https://github.com/madskristensen)**
-* **[Allen Underwood](http://www.codingblocks.net/about#joezack)
-* **[Joe Zack](http://www.codingblocks.net/about#joezack)
+* **[Allen Underwood](http://www.codingblocks.net/about#joezack)**
+* **[Joe Zack](http://www.codingblocks.net/about#joezack)**
 
 Additionally, I want to thank everyone for their feedback on the extension, new feature ideas, and all of the folks that don't hesitate to shoot an e-mail my way regarding the project.
