@@ -1,6 +1,5 @@
 ﻿using Microsoft.Html.Editor.Completion;
 using Microsoft.Html.Editor.Completion.Def;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -14,14 +13,14 @@ namespace Glyphfriend
 {
     [HtmlCompletionProvider(CompletionTypes.Values, "*", "class")]
     [ContentType("htmlx")]
-    internal class GlyphClassCompletionListProvider : IHtmlCompletionListProvider
+    internal class GlyphCompletionListProvider : BaseHtmlCompletionListProvider
     {
         [Import]
         protected SVsServiceProvider GlobalServiceProvider { get; private set; }
 
-        public string CompletionType => CompletionTypes.Values;
+        public override string CompletionType { get { return CompletionTypes.Values; } }
 
-        public IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
+        public override IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
             VSPackage package = (VSPackage)EnsurePackageLoaded();
             if (package == null)
@@ -29,11 +28,9 @@ namespace Glyphfriend
                 Logger.Log("Package failed to load properly!");
                 return new List<HtmlCompletion>();
             }
-
             var glyphCompletionItems = new List<HtmlCompletion>();
             // Get the filtered set of enabled glyphs
             var enabledGlyphs = package.Glyphs.Where(g => g.Enabled);
-            Logger.Log($"Serving all {enabledGlyphs.Count() } enabled glyphs.");
             foreach (var glyph in enabledGlyphs)
             {
                 glyphCompletionItems.Add(CreateItem(glyph.Name, glyph.Image, context.Session));
@@ -44,11 +41,6 @@ namespace Glyphfriend
         private IVsPackage EnsurePackageLoaded()
         {
             return GlobalServiceProvider.GetShell().LoadPackage<VSPackage>();
-        }
-
-        private HtmlCompletion CreateItem(string name, ImageSource icon, ICompletionSession session)
-        {
-            return new HtmlCompletion(name, name, name, icon, null, session);
         }
     }
 }
