@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props" Condition="Exists('..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props') And '$(VisualStudioVersion)' == '14.0'" />
-  <Import Project="..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26109-RC3\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26109-RC3\build\Microsoft.VSSDK.BuildTools.props') And '$(VisualStudioVersion)' != '14.0'" />
+  <Import Project="..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props') And '$(VisualStudioVersion)' != '14.0'" />
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -24,6 +26,11 @@
     <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
     <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
     <VsixType>v3</VsixType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="README.md" />
     <None Include="source.extension.vsixmanifest">
@@ -73,6 +81,26 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <Visible>False</Visible>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <SuppressFromVsix Include="Microsoft.CSS.Core.dll">
+      <Visible>False</Visible>
+    </SuppressFromVsix>
+    <SuppressFromVsix Include="Microsoft.CSS.Editor.dll">
+      <Visible>False</Visible>
+    </SuppressFromVsix>
+    <SuppressFromVsix Include="Microsoft.Html.Core.dll">
+      <Visible>False</Visible>
+    </SuppressFromVsix>
+    <SuppressFromVsix Include="Microsoft.Html.Editor.dll">
+      <Visible>False</Visible>
+    </SuppressFromVsix>
+    <SuppressFromVsix Include="Microsoft.Web.Core.dll">
+      <Visible>False</Visible>
+    </SuppressFromVsix>
+    <SuppressFromVsix Include="Microsoft.Web.Editor.dll">
+      <Visible>False</Visible>
+    </SuppressFromVsix>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -180,14 +208,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Threading, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.VisualStudio.Threading.15.0.20-pre\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Threading.15.0.240\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Utilities, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.VisualStudio.Utilities.14.3.25407\lib\net45\Microsoft.VisualStudio.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Validation, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.VisualStudio.Validation.15.0.11-pre\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Validation.15.0.82\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Core">
@@ -212,6 +240,21 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
+  <ItemGroup>
+    <VSCTCompile Include="..\Glyphfriend.Core\GlyphfriendMenu.vsct">
+      <Link>GlyphfriendMenu.vsct</Link>
+      <ResourceName>GlyphfriendMenu.ctmenu</ResourceName>
+      <!-- We only want to see this in the Core Project -->
+      <Visible>False</Visible>
+    </VSCTCompile>
+    <EmbeddedResource Include="..\Glyphfriend.Core\VSPackage.resx">
+      <Link>VSPackage.resx</Link>
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+      <!-- We only want to see this in the Core Project -->
+      <Visible>False</Visible>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="..\Glyphfriend.Core\Glyphfriend.Core.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -222,7 +265,15 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props'))" />
-    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets'))" />
+    <!-- Build Tooling Error Checking for VS 2015 -->
+    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets') And '$(VisualStudioVersion)' == '14.0'" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props') And '$(VisualStudioVersion)' == '14.0'" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.props'))" />
+    <!-- Build Tooling Error Checking for VS 2017 -->
+    <Error Condition="!Exists('..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets') And '$(VisualStudioVersion)' != '14.0'" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props') And '$(VisualStudioVersion)' != '14.0'" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props'))" />
   </Target>
+  <!-- Build Tooling for VS 2015-->
+  <Import Project="..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets" Condition="Exists('..\..\packages\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.14.0.20-pre\build\Microsoft.VisualStudio.Sdk.BuildTasks.14.0.targets') And '$(VisualStudioVersion)' == '14.0'" />
+  <!-- Build Tooling for VS 2017-->
+  <Import Project="..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets" Condition="Exists('..\..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets') And '$(VisualStudioVersion)' != '14.0'" />
 </Project>

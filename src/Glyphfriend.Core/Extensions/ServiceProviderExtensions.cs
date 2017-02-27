@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System;
 
-namespace Glyphfriend.Extensions
+namespace Glyphfriend
 {
     public static class ServiceProviderExtensions
     {

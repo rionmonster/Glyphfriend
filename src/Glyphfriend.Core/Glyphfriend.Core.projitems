@@ -9,10 +9,21 @@
     <Import_RootNamespace>Glyphfriend.Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Completion\BaseClassCompletionListProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphClassCompletionListProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ToggleLibraryCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Completion\BaseCompletionListProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphCompletionListProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceProviderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glyph.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlyphLibrary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logging\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings\GlyphfriendPreferences.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VSPackage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)GlyphfriendMenu.vsct" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VSPackage.resx" />
   </ItemGroup>
 </Project>

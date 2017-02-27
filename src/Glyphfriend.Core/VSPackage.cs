@@ -2,14 +2,19 @@
 using ProtoBuf;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using System.Runtime.InteropServices;
 
 namespace Glyphfriend
 {
+    /// <summary>
+    /// This is the core package and entry point for Glyphfriend and it handles
+    /// loading all of the underlying components of the extension. It is not
+    /// intialized until a valid HTMLX file (i.e. HTML, CSHTML, etc.) is opened.
+    /// </summary>
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [ProvideAutoLoad(Constants.HtmlFileLoadedContext)]
+    [Guid(Constants.HtmlFileLoadedContext)]
+    [ProvideMenuResource("GlyphfriendMenu.ctmenu", 1)]
     [ProvideUIContextRule(Constants.HtmlFileLoadedContext,
         name: "HTML File Loaded",
         expression: "HtmlConfig",
@@ -17,46 +22,32 @@ namespace Glyphfriend
         termValues: new[] { "ActiveEditorContentType:htmlx" })]
     public sealed class VSPackage : Package
     {
-        internal Dictionary<string, ImageSource> Glyphs { get; private set; }
+        internal List<Glyph> Glyphs { get; private set; }
         internal static string AssemblyLocation => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
         protected override void Initialize()
         {
+            Logger.Initialize(this, "Glyphfriend");
             DeserializeGlyphsFromBinary();
+            GlyphfriendPreferences.Initialize(this);
+            ToggleLibraryCommand.Initialize(this);
         }
 
         private void DeserializeGlyphsFromBinary()
         {
-            var binaryGlyphDictionary = DeserializeBinaryGlyphs();
-            Glyphs = ConvertBinaryGlyphDictionaryToGlyphDictionary(binaryGlyphDictionary);
+            Glyphs = DeserializeBinaryGlyphs();
+            Logger.Log($"{Glyphs.Count} supported glyphs found.");
         }
 
-        private Dictionary<string, byte[]> DeserializeBinaryGlyphs()
+        private List<Glyph> DeserializeBinaryGlyphs()
         {
             var binaryPath = Path.Combine(AssemblyLocation, "glyphs.bin");
             using (var fs = File.Open(binaryPath, FileMode.Open))
             {
-                return Serializer.Deserialize<Dictionary<string, byte[]>>(fs);
+                var glyphs = Serializer.Deserialize<List<Glyph>>(fs);
+                glyphs.ForEach(g => g.GenerateImage());
+                return glyphs;
             }
-        }
-
-        private Dictionary<string, ImageSource> ConvertBinaryGlyphDictionaryToGlyphDictionary(Dictionary<string, byte[]> dictionary)
-        {
-            return dictionary.ToDictionary(k => k.Key, v => BytesToImage(v.Value));
-        }
-
-        private ImageSource BytesToImage(byte[] imageData)
-        {
-            var image = new BitmapImage();
-            using (var ms = new MemoryStream(imageData))
-            {
-                image.BeginInit();
-                image.StreamSource = ms;
-                // This is required for images to be loaded by Visual Studio on-demand
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.EndInit();
-            }
-            return image as ImageSource;
         }
     }
 }
