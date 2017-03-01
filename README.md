@@ -73,7 +73,7 @@ I would like to give a special shout-out to several members of the community, in
 * **[Justin Clarebert](https://github.com/justcla)**
 * **[Alex Eyler](https://github.com/AlexEyler)**
 * **[Mads Kristensen](https://github.com/madskristensen)**
-* **[Allen Underwood](http://www.codingblocks.net/about#joezack)**
+* **[Allen Underwood](http://www.codingblocks.net/about#allenunderwood)**
 * **[Joe Zack](http://www.codingblocks.net/about#joezack)**
 
 Additionally, I want to thank everyone for their feedback on the extension, new feature ideas, and all of the folks that don't hesitate to shoot an e-mail my way regarding the project.
