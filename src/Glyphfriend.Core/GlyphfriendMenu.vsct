@@ -43,6 +43,12 @@
           <ButtonText>Foundation</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleIcoMoonCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>IcoMoon</ButtonText>
+        </Strings>
+      </Button>
       <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleIonicCommand" priority="0x0100" type="Button">
         <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
         <Strings>
@@ -90,6 +96,7 @@
       <IDSymbol name="ToggleMaterialDesignCommand" value="0x1106" />
       <IDSymbol name="ToggleMetroUiCommand" value="0x1107" />
       <IDSymbol name="ToggleOcticonsCommand" value="0x1108" />
+      <IDSymbol name="ToggleIcoMoonCommand" value="0x1109" />
     </GuidSymbol>
     <GuidSymbol name="HtmlCmdSet" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}" >
       <IDSymbol name="HtmlContextMenu" value="1" />
