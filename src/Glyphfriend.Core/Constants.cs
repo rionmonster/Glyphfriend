@@ -8,7 +8,7 @@ namespace Glyphfriend
         /// <summary>
         /// These settings are specific to Glyphfriend itself and its associated commands
         /// </summary>
-        public const string UserSettingsLibrary = "GlyphfriendLibraries";
+        public const string UserSettingsLibrary = "GlyphfriendLibrarySettings";
 
         public const string HtmlFileLoadedContext = "21F5568E-A5DE-4821-AF39-F4F1049BB9CF";
         public static readonly Guid PackageGuid = new Guid("21F5568E-A5DE-4821-AF39-F4F1049BB9CF");
@@ -35,12 +35,12 @@ namespace Glyphfriend
 
         /// <summary>
         /// These are all of the supported libraries in Glyphfriend along with their associated default
-        /// values (i.e. only Bootstrap is enabled by default).
+        /// values (i.e. Bootstrap and Font Awesome are enabled by default).
         /// </summary>
         public static readonly Dictionary<int, GlyphLibrary> Libraries = new Dictionary<int, GlyphLibrary>(){
             { ToggleBootstrapCommand, new GlyphLibrary("Bootstrap",  true) },
             { ToggleEntypoCommand, new GlyphLibrary("Entypo",  false) },
-            { ToggleFontAwesomeCommand, new GlyphLibrary("Font Awesome",  false) },
+            { ToggleFontAwesomeCommand, new GlyphLibrary("Font Awesome",  true) },
             { ToggleFoundationCommand, new GlyphLibrary("Foundation",  false) },
             { ToggleIonicCommand, new GlyphLibrary("Ionic", false) },
             { ToggleMaterialDesignCommand, new GlyphLibrary("Material Design", false) },
