@@ -46,6 +46,7 @@ namespace Glyphfriend
             {
                 image.BeginInit();
                 image.StreamSource = ms;
+
                 // This is required for images to be loaded by Visual Studio on-demand
                 image.CacheOption = BitmapCacheOption.OnLoad;
                 image.EndInit();

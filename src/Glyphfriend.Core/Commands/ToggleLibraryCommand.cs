@@ -34,8 +34,8 @@ namespace Glyphfriend
         private MenuCommand CreateCommand(Guid commandSet, int commandId)
         {
             var library = Constants.Libraries[commandId];
-            // Generate the command that will map this particular library to the appropriate button within the
-            // .vsct file
+
+            // Generate the command that will map this particular library to the appropriate button within the .vsct file
             return new MenuCommand(ToggleLibrary, new CommandID(commandSet, commandId)) { Checked = library.Enabled };
         }
 

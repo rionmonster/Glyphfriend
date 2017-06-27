@@ -22,6 +22,7 @@ namespace Glyphfriend
             Guid guid = typeof(T).GUID;
             IVsPackage package;
             ErrorHandler.ThrowOnFailure(shell.LoadPackage(ref guid, out package));
+
             return (T)package;
         }
     }
