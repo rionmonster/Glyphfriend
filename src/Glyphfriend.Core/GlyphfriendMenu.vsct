@@ -73,6 +73,12 @@
           <ButtonText>Octicons</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleRpgAwesomeCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>RPG Awesome</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
   </Commands>
   <CommandPlacements>
@@ -97,6 +103,7 @@
       <IDSymbol name="ToggleMetroUiCommand" value="0x1107" />
       <IDSymbol name="ToggleOcticonsCommand" value="0x1108" />
       <IDSymbol name="ToggleIcoMoonCommand" value="0x1109" />
+      <IDSymbol name="ToggleRpgAwesomeCommand" value="0x1110" />
     </GuidSymbol>
     <GuidSymbol name="HtmlCmdSet" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}" >
       <IDSymbol name="HtmlContextMenu" value="1" />

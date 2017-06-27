@@ -30,6 +30,8 @@ namespace Glyphfriend
         public const int ToggleMetroUiCommand = 0x1107;
         public const int ToggleOcticonsCommand = 0x1108;
         public const int ToggleIcoMoonCommand = 0x1109;
+        public const int ToggleRpgAwesomeCommand = 0x1110;
+
 
         /// <summary>
         /// These are all of the supported libraries in Glyphfriend along with their associated default
@@ -44,7 +46,9 @@ namespace Glyphfriend
             { ToggleMaterialDesignCommand, new GlyphLibrary("Material Design", false) },
             { ToggleMetroUiCommand, new GlyphLibrary("Metro UI",  false) },
             { ToggleOcticonsCommand, new GlyphLibrary("Octicons", false) },
-            { ToggleIcoMoonCommand, new GlyphLibrary("IcoMoon", false) }
+            { ToggleIcoMoonCommand, new GlyphLibrary("IcoMoon", false) },
+            { ToggleRpgAwesomeCommand, new GlyphLibrary("RPG Awesome", false) }
+
         };
     }
 }
