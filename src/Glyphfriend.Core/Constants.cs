@@ -23,14 +23,16 @@ namespace Glyphfriend
 
         public const int ToggleBootstrapCommand = 0x1101;
         public const int ToggleEntypoCommand = 0x1102;
-        public const int ToggleFontAwesomeCommand = 0x1103;
-        public const int ToggleFoundationCommand = 0x1104;
-        public const int ToggleIonicCommand = 0x1105;
-        public const int ToggleMaterialDesignCommand = 0x1106;
-        public const int ToggleMetroUiCommand = 0x1107;
-        public const int ToggleOcticonsCommand = 0x1108;
-        public const int ToggleIcoMoonCommand = 0x1109;
-        public const int ToggleRpgAwesomeCommand = 0x1110;
+        public const int ToggleFoundationCommand = 0x1103;
+        public const int ToggleIonicCommand = 0x1104;
+        public const int ToggleMaterialDesignCommand = 0x1105;
+        public const int ToggleMetroUiCommand = 0x1106;
+        public const int ToggleOcticonsCommand = 0x1107;
+        public const int ToggleIcoMoonCommand = 0x1108;
+        public const int ToggleRpgAwesomeCommand = 0x1109;
+        public const int ToggleSegmdl2Command = 0x1110;
+        public const int ToggleFontAwesome4Command = 0x1111;
+        public const int ToggleFontAwesome5Command = 0x1112;
 
 
         /// <summary>
@@ -40,15 +42,16 @@ namespace Glyphfriend
         public static readonly Dictionary<int, GlyphLibrary> Libraries = new Dictionary<int, GlyphLibrary>(){
             { ToggleBootstrapCommand, new GlyphLibrary("Bootstrap",  true) },
             { ToggleEntypoCommand, new GlyphLibrary("Entypo",  false) },
-            { ToggleFontAwesomeCommand, new GlyphLibrary("Font Awesome",  true) },
             { ToggleFoundationCommand, new GlyphLibrary("Foundation",  false) },
             { ToggleIonicCommand, new GlyphLibrary("Ionic", false) },
             { ToggleMaterialDesignCommand, new GlyphLibrary("Material Design", false) },
             { ToggleMetroUiCommand, new GlyphLibrary("Metro UI",  false) },
             { ToggleOcticonsCommand, new GlyphLibrary("Octicons", false) },
             { ToggleIcoMoonCommand, new GlyphLibrary("IcoMoon", false) },
-            { ToggleRpgAwesomeCommand, new GlyphLibrary("RPG Awesome", false) }
-
+            { ToggleRpgAwesomeCommand, new GlyphLibrary("RPG Awesome", false) },
+            { ToggleSegmdl2Command, new GlyphLibrary("Segmdl2", true) },
+            { ToggleFontAwesome4Command, new GlyphLibrary("Font Awesome4",  false) },
+            { ToggleFontAwesome5Command, new GlyphLibrary("Font Awesome5",  true) },
         };
     }
 }

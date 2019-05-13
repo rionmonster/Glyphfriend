@@ -1,5 +1,11 @@
-﻿using Microsoft.Html.Editor.Completion;
+﻿#if (VS2019)
+using Microsoft.WebTools.Languages.Html.Editor.Completion;
+using Microsoft.WebTools.Languages.Html.Editor.Completion.Def;
+#else
+using Microsoft.Html.Editor.Completion;
 using Microsoft.Html.Editor.Completion.Def;
+#endif
+
 using Microsoft.VisualStudio.Language.Intellisense;
 using System.Collections.Generic;
 using System.Windows.Media;

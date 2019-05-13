@@ -54,4 +54,5 @@ namespace Glyphfriend
             Image = image as ImageSource;
         }
     }
+
 }

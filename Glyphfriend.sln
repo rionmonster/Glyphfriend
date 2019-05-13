@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Glyphfriend.Core", "src\Glyphfriend.Core\Glyphfriend.Core.shproj", "{8189A63E-D159-4195-BE2E-D44B022B45AB}"
 EndProject
@@ -17,9 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2015", "src\G
 		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E} = {1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2019", "src\Glyphfriend.VS2019\Glyphfriend.VS2019.csproj", "{A9C4638D-E297-4182-9354-F866DD6F2863}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{8189a63e-d159-4195-be2e-d44b022b45ab}*SharedItemsImports = 13
+		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{a9c4638d-e297-4182-9354-f866dd6f2863}*SharedItemsImports = 4
 		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{d1402395-be4d-4c7f-a5a2-a5ec6ac57f8e}*SharedItemsImports = 4
 		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{fa04448a-6a92-45f6-904b-683029de66a3}*SharedItemsImports = 4
 	EndGlobalSection
@@ -40,8 +43,15 @@ Global
 		{FA04448A-6A92-45F6-904B-683029DE66A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA04448A-6A92-45F6-904B-683029DE66A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA04448A-6A92-45F6-904B-683029DE66A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C4638D-E297-4182-9354-F866DD6F2863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C4638D-E297-4182-9354-F866DD6F2863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C4638D-E297-4182-9354-F866DD6F2863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C4638D-E297-4182-9354-F866DD6F2863}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8133097-214C-4D1F-9BA3-E95293CAA800}
 	EndGlobalSection
 EndGlobal
