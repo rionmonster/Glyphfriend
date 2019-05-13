@@ -9,12 +9,13 @@ Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to
 
 * [Bootstrap Glyphicons](http://getbootstrap.com/components/#glyphicons)
 * [Entypo](http://www.entypo.com)
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) v4.7 & v5.8.2
 * [Foundation](http://foundation.zurb.com/)
 * [Ionicons](http://ionicons.com/) 
 * [Material Design](https://materialdesignicons.com/)
 * [MetroUI](https://metroui.org.ua/)
 * [Octicons](https://octicons.github.com/)
+* [Segmdl2](https://github.com/dodu2014/segmdl2-webfont)
 
 ## Getting Started
 
