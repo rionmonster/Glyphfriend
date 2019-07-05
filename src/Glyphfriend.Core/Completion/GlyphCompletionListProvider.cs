@@ -26,13 +26,16 @@ namespace Glyphfriend
                 Logger.Log("Package failed to load properly!");
                 return new List<HtmlCompletion>();
             }
+
             var glyphCompletionItems = new List<HtmlCompletion>();
+
             // Get the filtered set of enabled glyphs
             var enabledGlyphs = package.Glyphs.Where(g => g.Enabled);
             foreach (var glyph in enabledGlyphs)
             {
                 glyphCompletionItems.Add(CreateItem(glyph.Name, glyph.Image, context.Session));
             }
+
             return glyphCompletionItems;
         }
 

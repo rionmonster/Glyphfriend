@@ -27,10 +27,13 @@ namespace Glyphfriend
         {
             // Resolve the library
             var library = Constants.Libraries[libraryId];
+
             // Update settings
             Settings.SetBoolean(Constants.UserSettingsLibrary, library.Name, isEnabled);
+
             // Update menus
             Constants.Libraries[libraryId].Enabled = isEnabled;
+
             // Update glyphs
             _package.Glyphs.Where(g => g.Library == library.Name)
                            .Select(g => { g.Enabled = isEnabled; return g; })
@@ -56,6 +59,7 @@ namespace Glyphfriend
             foreach (var libraryId in Constants.Libraries.Keys)
             {
                 var library = Constants.Libraries[libraryId];
+
                 // Check if this library exists, and if not, set its default value from the extension
                 if (!Settings.PropertyExists(Constants.UserSettingsLibrary, library.Name))
                 {
@@ -65,6 +69,7 @@ namespace Glyphfriend
                 {
                     library.Enabled = Settings.GetBoolean(Constants.UserSettingsLibrary, library.Name);
                 }
+
                 Logger.Log($"Library '{library.Name}' is {(library.Enabled ? "enabled" : "disabled")}.");
                 ToggleLibrary(libraryId, library.Enabled);
             }

@@ -28,6 +28,7 @@ namespace Glyphfriend.Packager
 
                 glyphs.Add(glyph);
             }
+
             return glyphs;
         }
 
