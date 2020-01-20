@@ -6,7 +6,7 @@
     <SharedGUID>8189a63e-d159-4195-be2e-d44b022b45ab</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Glyphfriend.Core</Import_RootNamespace>
+    <Import_RootNamespace>Glyphfriend.Core.Legacy</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ToggleLibraryCommand.cs" />
