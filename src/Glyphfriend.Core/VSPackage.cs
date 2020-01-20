@@ -34,6 +34,7 @@ namespace Glyphfriend
             DeserializeGlyphsFromBinary();
 
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            
             await GlyphfriendPreferences.InitializeAsync(this);
             await ToggleLibraryCommand.InitializeAsync(this);
         }

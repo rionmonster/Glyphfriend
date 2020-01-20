@@ -12,12 +12,6 @@ namespace Glyphfriend
         private static IVsOutputWindowPane _pane;
         private static IVsOutputWindow _output;
 
-        public static void Initialize(IServiceProvider provider, string name)
-        {
-            _output = (IVsOutputWindow)provider.GetService(typeof(SVsOutputWindow));
-            _name = name;
-        }
-
         public static async Task InitializeAsync(VSPackage package, string name)
         {
             _output = await package.GetServiceAsync(typeof(SVsOutputWindow)) as IVsOutputWindow;
