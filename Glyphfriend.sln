@@ -17,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyphfriend.VS2015", "src\G
 		{1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E} = {1D2D5AC8-59A5-4A8C-AA3C-FD11CB385D5E}
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Glyphfriend.Core", "src\Glyphfriend.Core\Glyphfriend.Core.shproj", "{9653A097-5CB1-4064-84F9-9F9BF2782124}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\Glyphfriend.Core.Legacy\Glyphfriend.Core.Legacy.projitems*{8189a63e-d159-4195-be2e-d44b022b45ab}*SharedItemsImports = 13
-		src\Glyphfriend.Core.Legacy\Glyphfriend.Core.Legacy.projitems*{d1402395-be4d-4c7f-a5a2-a5ec6ac57f8e}*SharedItemsImports = 4
-		src\Glyphfriend.Core.Legacy\Glyphfriend.Core.Legacy.projitems*{fa04448a-6a92-45f6-904b-683029de66a3}*SharedItemsImports = 4
+		src\Glyphfriend.Core\Glyphfriend.Core.projitems*{9653a097-5cb1-4064-84f9-9f9bf2782124}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

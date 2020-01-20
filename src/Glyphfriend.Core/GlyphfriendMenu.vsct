@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Commands package="guidToggleLibraryCommandPackage">
+    <Menus>
+      <Menu guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendMenu" priority="0x001" type="Menu">
+        <Parent guid="guidTopMenu" id="TopMenu" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Glyphfriend</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+      <Group guid="guidTopMenu" id="TopMenu" priority="0x001" />
+      <Group guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" priority="0x0600">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendMenu"/>
+      </Group>
+    </Groups>
+    <Buttons>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleBootstrapCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Bootstrap</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleEntypoCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Entypo</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleFontAwesomeCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Font Awesome</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleFoundationCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Foundation</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleIcoMoonCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>IcoMoon</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleIonicCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Ionic</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleMaterialDesignCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Material Design</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleMetroUiCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Metro UI</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleOcticonsCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>Octicons</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidToggleLibraryCommandPackageCmdSet" id="ToggleRpgAwesomeCommand" priority="0x0100" type="Button">
+        <Parent guid="guidToggleLibraryCommandPackageCmdSet" id="GlyphfriendLibrariesMenuGroup" />
+        <Strings>
+          <ButtonText>RPG Awesome</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  <CommandPlacements>
+    <CommandPlacement guid="guidTopMenu" id="TopMenu" priority="0x0300">
+      <Parent guid="HtmlCmdSet" id="HtmlContextMenu"/>
+    </CommandPlacement>
+  </CommandPlacements>
+  <Symbols>
+    <GuidSymbol name="guidToggleLibraryCommandPackage" value="{21F5568E-A5DE-4821-AF39-F4F1049BB9CF}" />
+    <GuidSymbol name="guidTopMenu" value="{f321cac5-e101-459b-b24e-ba72ad25a2f3}">
+      <IDSymbol name="TopMenu" value="0x3001" />
+    </GuidSymbol>
+    <GuidSymbol name="guidToggleLibraryCommandPackageCmdSet" value="{faf962bd-d32b-4c73-a5d3-fcdf95277a21}">
+      <IDSymbol name="GlyphfriendMenu" value="0x1001" />
+      <IDSymbol name="GlyphfriendLibrariesMenuGroup" value="0x1100" />
+      <IDSymbol name="ToggleBootstrapCommand" value="0x1101" />
+      <IDSymbol name="ToggleEntypoCommand" value="0x1102" />
+      <IDSymbol name="ToggleFontAwesomeCommand" value="0x1103" />
+      <IDSymbol name="ToggleFoundationCommand" value="0x1104" />
+      <IDSymbol name="ToggleIonicCommand" value="0x1105" />
+      <IDSymbol name="ToggleMaterialDesignCommand" value="0x1106" />
+      <IDSymbol name="ToggleMetroUiCommand" value="0x1107" />
+      <IDSymbol name="ToggleOcticonsCommand" value="0x1108" />
+      <IDSymbol name="ToggleIcoMoonCommand" value="0x1109" />
+      <IDSymbol name="ToggleRpgAwesomeCommand" value="0x1110" />
+    </GuidSymbol>
+    <GuidSymbol name="HtmlCmdSet" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}" >
+      <IDSymbol name="HtmlContextMenu" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
