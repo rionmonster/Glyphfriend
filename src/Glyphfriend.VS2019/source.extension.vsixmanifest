@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-      <Identity Id="Glyphfriend.VS2019.RionWilliams.da26054d-2c11-4d71-87c2-a4fa188a09c2" Version="2.1.0.2" Language="en-US" Publisher="Rion Williams" />
-      <DisplayName>Glyphfriend 2019</DisplayName>
-      <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Material Design, Octicons, and more.</Description>
-      <MoreInfo>https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend</MoreInfo>
-      <License>LICENSE.txt</License>
-      <Icon>Glyphfriend.png</Icon>
-      <PreviewImage>Glyphfriend.png</PreviewImage>
-      <Tags>visual studio intellisense, glyph intellisense, font awesome, glyphicons, icon intellisense, foundation, ionicons, emojis, emoticons, metroui</Tags>
+        <Identity Id="Glyphfriend.VS2019.RionWilliams.da26054d-2c11-4d71-87c2-a4fa188a09c2" Version="2.1.0.2" Language="en-US" Publisher="Rion Williams" />
+        <DisplayName>Glyphfriend 2019</DisplayName>
+        <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Material Design, Octicons, and more.</Description>
+        <MoreInfo>https://github.com/rionmonster/Glyphfriend/</MoreInfo>
+        <License>LICENSE.txt</License>
+        <Icon>Glyphfriend.png</Icon>
+        <PreviewImage>Glyphfriend.png</PreviewImage>
+        <Tags>visual studio intellisense, glyph intellisense, font awesome, glyphicons, icon intellisense, foundation, ionicons, emojis, emoticons, metroui</Tags>
     </Metadata>
-  <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[16.0, 17.0)" />
-    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[16.0, 17.0)" />
-  </Installation>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[16.0, 17.0)" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[16.0, 17.0)" />
+    </Installation>
     <Dependencies>
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     </Dependencies>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0, 17.0)" DisplayName="Visual Studio core editor" />
-    <Prerequisite Id="Microsoft.VisualStudio.Component.Web" Version="[16.0, 17.0)" DisplayName="Web development tools" />
-  </Prerequisites>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-  </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0, 17.0)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.Web" Version="[16.0, 17.0)" DisplayName="Web development tools" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    </Assets>
 </PackageManifest>

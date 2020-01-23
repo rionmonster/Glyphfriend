@@ -22,6 +22,7 @@ Glyphfriend has a separate extension for both Visual Studio 2015 and Visual Stud
 
 * [Download Glyphfriend 2015](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend)
 * [Download Glyphfriend 2017](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2017)
+* [Download Glyphfriend 2019](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2019)
 
 You can also just search for it within the **Tools > Extensions and Updates** area of Visual Studio.
 
@@ -45,7 +46,8 @@ Within this repository you'll find all of the necessary projects that make Glyph
 * **[Glyphfriend.Core.Legacy](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.Core.Legacy)** - This project is a Shared Library for Visual Studio 2015/2017 that contains all of the necessary code for the extension to work. Namely the autocompletion providers and the necessary code to handle deserializing the glyphs at run-time. 
 * **[Glyphfriend.Packager](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.Packager)** - This project functions as a build-time dependency for the two extension projects and handles generating a binary file containing all of the glyph mappings (via Protobuf), which is consumed and deserialized within the Glyphfriend.Core package.
 * **[Glyphfriend.VS2015](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2015)** - This project stores all of the necessary manifest information for the Visual Studio 2015 extension, and defines all of the metadata that populates the marketplace.
-* **[Glyphfriend.VS2017](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2017)** - This project stores all of the necessary manifest information for the Visual Studio 2015 extension, and defines all of the metadata that populates the marketplace.
+* **[Glyphfriend.VS2017](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2017)** - This project stores all of the necessary manifest information for the Visual Studio 2017 extension, and defines all of the metadata that populates the marketplace.
+* **[Glyphfriend.VS2019](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2019)** - This project stores all of the necessary manifest information for the Visual Studio 2019 extension, and defines all of the metadata that populates the marketplace.
 
 ## Find an Issue?
 

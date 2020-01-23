@@ -1,7 +1,7 @@
 # Glyphfriend.Packager
 ======
 
-This project is console application which is responsible for generating a binary file containing all of the supported glyphs for the project. Both of the extension projects, [Glyphfriend.VS2015](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2015) and [Glyphfriend.VS2017](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2017) have a built dependency on it, which ensures that the binary file will be available prior to those projects being built.
+This project is console application which is responsible for generating a binary file containing all of the supported glyphs for the project. All of the extension projects, [Glyphfriend](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2015), [Glyphfriend 2017](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2017), and [Glyphfriend 2019](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2019) have a built dependency on it, which ensures that the binary file will be available prior to those projects being built.
 
 ## What this project does?
 
