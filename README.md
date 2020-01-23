@@ -1,8 +1,6 @@
 ![Glyphfriend](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-full-logo.png)
 ===========
 
-[![Build status](https://ci.appveyor.com/api/projects/status/r8wjl6ukwlnpvwid?svg=true)](https://ci.appveyor.com/project/rionmonster/glyphfriend)
-
 Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Bootstrap, and much more.
 
 ## Supported Glyphs and Libraries
@@ -15,15 +13,17 @@ Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to
 * [Material Design](https://materialdesignicons.com/)
 * [MetroUI](https://metroui.org.ua/)
 * [Octicons](https://octicons.github.com/)
+* [RPG Awesome]()
 
 ## Getting Started
 
-Glyphfriend has a separate extension for both Visual Studio 2015 and Visual Studio 2017, so to get started, you'll simply need to download the version(s) that apply to you from the Visual Studio Marketplace:
+Glyphfriend has a separate extension for both Visual Studio 2015, Visual Studio 2017, Visual Studio 2019, so to get started, you'll simply need to download the version(s) that apply to you from the Visual Studio Marketplace:
 
 * [Download Glyphfriend 2015](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend)
 * [Download Glyphfriend 2017](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2017)
+* [Download Glyphfriend 2019](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2019)
 
-You can also just search for it within the **Tools > Extensions and Updates** area of Visual Studio.
+You can also just search for it within the **Tools > Extensions and Updates or Extensions > Manage Extensions** area of Visual Studio.
 
 After installing the extension, that's it. Glyphfriend will automatically detect when a valid HTML flavored file is opened and it will add all of the supported icons to the autocompletion within `class` attributes as seen below:
 
@@ -41,10 +41,12 @@ It's important to note that **library preferences are persistent across Visual S
 
 Within this repository you'll find all of the necessary projects that make Glyphfriend work, which can be described below:
 
-* **[Glyphfriend.Core](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.Core)** - This project is a Shared Library that contains all of the necessary code for the extension to work. Namely the autocompletion providers and the necessary code to handle deserializing the glyphs at run-time.
+* **[Glyphfriend.Core](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.Core)** - This project is a Shared Library for Visual Studio 2019 that contains all of the necessary code for the extension to work. Namely the autocompletion providers and the necessary code to handle deserializing the glyphs at run-time.
+* **[Glyphfriend.Core.Legacy](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.Core.Legacy)** - This project is a Shared Library for Visual Studio 2015/2017 that contains all of the necessary code for the extension to work. Namely the autocompletion providers and the necessary code to handle deserializing the glyphs at run-time. 
 * **[Glyphfriend.Packager](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.Packager)** - This project functions as a build-time dependency for the two extension projects and handles generating a binary file containing all of the glyph mappings (via Protobuf), which is consumed and deserialized within the Glyphfriend.Core package.
 * **[Glyphfriend.VS2015](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2015)** - This project stores all of the necessary manifest information for the Visual Studio 2015 extension, and defines all of the metadata that populates the marketplace.
-* **[Glyphfriend.VS2017](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2017)** - This project stores all of the necessary manifest information for the Visual Studio 2015 extension, and defines all of the metadata that populates the marketplace.
+* **[Glyphfriend.VS2017](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2017)** - This project stores all of the necessary manifest information for the Visual Studio 2017 extension, and defines all of the metadata that populates the marketplace.
+* **[Glyphfriend.VS2019](https://github.com/rionmonster/Glyphfriend/tree/develop/src/Glyphfriend.VS2019)** - This project stores all of the necessary manifest information for the Visual Studio 2019 extension, and defines all of the metadata that populates the marketplace.
 
 ## Find an Issue?
 

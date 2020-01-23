@@ -1,42 +1,30 @@
-﻿using Microsoft.VisualStudio.Shell.Interop;
-using System;
+﻿using System;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using Task = System.Threading.Tasks.Task;
 
 namespace Glyphfriend
 {
-    /// <summary>
-    /// A logger made specifically for Visual Studio extensions.
-    /// </summary>
-    public static class Logger
+    internal static class Logger
     {
-        private static IVsOutputWindowPane _pane;
-        private static IServiceProvider _provider;
-        private static Guid _guid;
         private static string _name;
-        private static object _syncRoot = new object();
+        private static Guid _guid = new Guid();
+        private static IVsOutputWindowPane _pane;
+        private static IVsOutputWindow _output;
 
-        public static void Initialize(IServiceProvider provider, string name)
+        public static async Task InitializeAsync(VSPackage package, string name)
         {
-            _provider = provider;
+            _output = await package.GetServiceAsync(typeof(SVsOutputWindow)) as IVsOutputWindow;
             _name = name;
         }
 
-        public static void Initialize(IServiceProvider provider, string name, string version)
+        public static void Log(object message)
         {
-            Initialize(provider, name);
-        }
-
-        public static void Log(string message)
-        {
-            if (string.IsNullOrEmpty(message))
-            {
-                return;
-            }
-
             try
             {
                 if (EnsurePane())
                 {
-                    _pane.OutputStringThreadSafe($"{DateTime.Now}: {message} {Environment.NewLine}");
+                    _pane.OutputString($"{DateTime.Now}: {message} {Environment.NewLine}");
                 }
             }
             catch (Exception ex)
@@ -45,53 +33,23 @@ namespace Glyphfriend
             }
         }
 
-        public static void Log(Exception ex)
-        {
-            if (ex != null)
-            {
-                Log(ex.ToString());
-            }
-        }
-
-        public static void Clear()
-        {
-            if (_pane != null)
-            {
-                _pane.Clear();
-            }
-        }
-
         public static void DeletePane()
         {
-            if (_pane != null)
+            if (_output != null)
             {
-                try
-                {
-                    IVsOutputWindow output = (IVsOutputWindow)_provider.GetService(typeof(SVsOutputWindow));
-                    output.DeletePane(ref _guid);
-                    _pane = null;
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.Write(ex);
-                }
+                _output.DeletePane(_guid);
             }
         }
 
         private static bool EnsurePane()
         {
-            if (_pane == null)
+            if (_pane == null && _output != null)
             {
-                lock (_syncRoot)
+                ThreadHelper.Generic.BeginInvoke(() =>
                 {
-                    if (_pane == null)
-                    {
-                        _guid = Guid.NewGuid();
-                        IVsOutputWindow output = (IVsOutputWindow)_provider.GetService(typeof(SVsOutputWindow));
-                        output.CreatePane(ref _guid, _name, 1, 1);
-                        output.GetPane(ref _guid, out _pane);
-                    }
-                }
+                    _output.CreatePane(ref _guid, _name, 1, 1);
+                    _output.GetPane(ref _guid, out _pane);
+                });
             }
 
             return _pane != null;

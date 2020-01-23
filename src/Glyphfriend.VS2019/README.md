@@ -1,7 +1,7 @@
 ![Glyphfriend](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-full-logo.png)
 ===========
 
-Glyphfriend is a Visual Studio 2015 extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Bootstrap, and much more.
+Glyphfriend is a Visual Studio 2019 extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Bootstrap, and much more.
 
 ## Supported Glyphs and Libraries
 
@@ -17,7 +17,7 @@ Glyphfriend is a Visual Studio 2015 extension to enhance the existing Intellisen
 
 ## Getting Started
 
-You can [download and install Glyphfriend from the Visual Studio Gallery here](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend) or simply search for it within the **Tools > Extensions and Updates** area of Visual Studio.
+You can [download and install Glyphfriend from the Visual Studio Gallery here](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2019) or simply search for it within the **Tools > Extensions and Updates** area of Visual Studio.
 
 After installing the extension, that's it. Glyphfriend will automatically detect when a valid HTML flavored file is opened and it will add all of the supported icons to the autocompletion within `class` attributes as seen below:
 
@@ -48,8 +48,8 @@ The following two options have been successful with other Resharper users, so I 
 
 If you are looking for another version of Visual Studio that is supported, you can find the appropriate extensions below:
 
+* **[Visual Studio 2015](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend)**
 * **[Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2017)**
-* **[Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=RionWilliams.Glyphfriend2019)**
 
 ## Missing Something?
 

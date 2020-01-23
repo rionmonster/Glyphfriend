@@ -1,12 +1,6 @@
-﻿using Microsoft;
-using Microsoft.VisualStudio.Settings;
+﻿using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Shell.Settings;
-using Microsoft.VisualStudio.Threading;
-using ProtoBuf;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace Glyphfriend
@@ -19,17 +13,12 @@ namespace Glyphfriend
     public static class GlyphfriendPreferences
     {
         public static WritableSettingsStore Settings { get; private set; }
-        public static List<Glyph> Glyphs { get; private set; }
+        private static VSPackage _package;
 
-        private static ShellSettingsManager SettingsManagerInstance { get; set; }
-        private static readonly AsyncLazy<ShellSettingsManager> SettingsManager = new AsyncLazy<ShellSettingsManager>(GetSettingsManagerAsync, ThreadHelper.JoinableTaskFactory);
-
-        public static async System.Threading.Tasks.Task InitializeAsync()
+        public static void Initialize(Package package)
         {
-            SettingsManagerInstance = await SettingsManager.GetValueAsync();
-
-            Settings = SettingsManagerInstance.GetWritableSettingsStore(SettingsScope.UserSettings);
-            Glyphs = LoadSupportedGlyphs();
+            _package = (VSPackage)package;
+            Settings = new ShellSettingsManager(package).GetWritableSettingsStore(SettingsScope.UserSettings);
             EnsureSettingsStoreExists();
             InitializeSupportedLibraries();
         }
@@ -46,10 +35,9 @@ namespace Glyphfriend
             Constants.Libraries[libraryId].Enabled = isEnabled;
 
             // Update glyphs
-            Glyphs.Where(g => g.Library == library.Name)
-                  .Select(g => { g.Enabled = isEnabled; return g; })
-                  .ToList();
-
+            _package.Glyphs.Where(g => g.Library == library.Name)
+                           .Select(g => { g.Enabled = isEnabled; return g; })
+                           .ToList();
         }
 
         private static void EnsureSettingsStoreExists()
@@ -85,31 +73,6 @@ namespace Glyphfriend
                 Logger.Log($"Library '{library.Name}' is {(library.Enabled ? "enabled" : "disabled")}.");
                 ToggleLibrary(libraryId, library.Enabled);
             }
-        }
-
-        private static List<Glyph> LoadSupportedGlyphs()
-        {
-            var binaryPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "glyphs.bin");
-            using (var fs = File.Open(binaryPath, FileMode.Open))
-            {
-                var glyphs = Serializer.Deserialize<List<Glyph>>(fs);
-                glyphs.ForEach(g => g.GenerateImage());
-
-                Logger.Log($"{glyphs.Count} glyphs found.");
-                return glyphs;
-            }
-        }
-
-        private static async System.Threading.Tasks.Task<ShellSettingsManager> GetSettingsManagerAsync()
-        {
-#pragma warning disable VSTHRD010
-            // False-positive in Threading Analyzers. Bug tracked here https://github.com/Microsoft/vs-threading/issues/230
-            var svc = await AsyncServiceProvider.GlobalProvider.GetServiceAsync(typeof(SVsSettingsManager)) as IVsSettingsManager;
-#pragma warning restore VSTHRD010
-
-            Assumes.Present(svc);
-            
-            return new ShellSettingsManager(svc);
         }
     }
 }

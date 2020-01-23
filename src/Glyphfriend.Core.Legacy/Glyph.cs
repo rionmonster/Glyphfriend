@@ -11,7 +11,7 @@ namespace Glyphfriend
     /// the contents after it has been deserialized.
     /// </summary>
     [ProtoContract]
-    public class Glyph
+    internal class Glyph
     {
         [ProtoMember(1)]
         public string Name { get; private set; }

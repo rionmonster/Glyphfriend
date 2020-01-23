@@ -1,10 +1,8 @@
-﻿using Microsoft.VisualStudio.Language.Intellisense;
-using Microsoft.WebTools.Languages.Html.Editor.Completion;
-using Microsoft.WebTools.Languages.Html.Editor.Completion.Def;
-using Microsoft.WebTools.Languages.Html.Editor.Completion.Html;
+﻿using Microsoft.Html.Editor.Completion;
+using Microsoft.Html.Editor.Completion.Def;
+using Microsoft.VisualStudio.Language.Intellisense;
 using System.Collections.Generic;
 using System.Windows.Media;
-
 
 namespace Glyphfriend
 {
@@ -16,7 +14,7 @@ namespace Glyphfriend
 
         protected HtmlCompletion CreateItem(string name, ImageSource icon, ICompletionSession session)
         {
-            return new HtmlCompletion(name, name, string.Empty, icon, HtmlIconAutomationText.AttributeIconText, session);
+            return new HtmlCompletion(name, name, name, icon, null, session);
         }
     }
 }

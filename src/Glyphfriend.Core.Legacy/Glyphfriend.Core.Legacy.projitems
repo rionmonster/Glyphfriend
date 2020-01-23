@@ -3,17 +3,17 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>9653a097-5cb1-4064-84f9-9f9bf2782124</SharedGUID>
+    <SharedGUID>8189a63e-d159-4195-be2e-d44b022b45ab</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Glyphfriend.Core</Import_RootNamespace>
+    <Import_RootNamespace>Glyphfriend.Core.Legacy</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ToggleLibraryCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Completion\BaseCompletionListProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Completion\CompletionTypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Completion\GlyphCompletionListProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceProviderExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Glyph.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GlyphLibrary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logging\Logger.cs" />
@@ -24,8 +24,6 @@
     <None Include="$(MSBuildThisFileDirectory)GlyphfriendMenu.vsct" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VSPackage.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VSPackage.resx" />
   </ItemGroup>
 </Project>
