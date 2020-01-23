@@ -4,6 +4,9 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Shell.Settings;
 using Microsoft.VisualStudio.Threading;
+using ProtoBuf;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Glyphfriend
@@ -15,19 +18,18 @@ namespace Glyphfriend
     /// </summary>
     public static class GlyphfriendPreferences
     {
+        public static WritableSettingsStore Settings { get; private set; }
+        public static List<Glyph> Glyphs { get; private set; }
+
         private static ShellSettingsManager SettingsManagerInstance { get; set; }
         private static readonly AsyncLazy<ShellSettingsManager> SettingsManager = new AsyncLazy<ShellSettingsManager>(GetSettingsManagerAsync, ThreadHelper.JoinableTaskFactory);
 
-
-        public static WritableSettingsStore Settings { get; private set; }
-        private static VSPackage _package;
-
-        public static async System.Threading.Tasks.Task InitializeAsync(VSPackage package)
+        public static async System.Threading.Tasks.Task InitializeAsync()
         {
-            _package = package;
             SettingsManagerInstance = await SettingsManager.GetValueAsync();
 
             Settings = SettingsManagerInstance.GetWritableSettingsStore(SettingsScope.UserSettings);
+            Glyphs = LoadSupportedGlyphs();
             EnsureSettingsStoreExists();
             InitializeSupportedLibraries();
         }
@@ -44,9 +46,9 @@ namespace Glyphfriend
             Constants.Libraries[libraryId].Enabled = isEnabled;
 
             // Update glyphs
-            _package.Glyphs.Where(g => g.Library == library.Name)
-                           .Select(g => { g.Enabled = isEnabled; return g; })
-                           .ToList();
+            Glyphs.Where(g => g.Library == library.Name)
+                  .Select(g => { g.Enabled = isEnabled; return g; })
+                  .ToList();
 
         }
 
@@ -82,6 +84,19 @@ namespace Glyphfriend
 
                 Logger.Log($"Library '{library.Name}' is {(library.Enabled ? "enabled" : "disabled")}.");
                 ToggleLibrary(libraryId, library.Enabled);
+            }
+        }
+
+        private static List<Glyph> LoadSupportedGlyphs()
+        {
+            var binaryPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "glyphs.bin");
+            using (var fs = File.Open(binaryPath, FileMode.Open))
+            {
+                var glyphs = Serializer.Deserialize<List<Glyph>>(fs);
+                glyphs.ForEach(g => g.GenerateImage());
+
+                Logger.Log($"{glyphs.Count} glyphs found.");
+                return glyphs;
             }
         }
 

@@ -1,8 +1,5 @@
 ﻿using Microsoft.VisualStudio.Shell;
-using ProtoBuf;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Task = System.Threading.Tasks.Task;
@@ -25,35 +22,13 @@ namespace Glyphfriend
         termValues: new[] { "ActiveEditorContentType:htmlx" })]
     public sealed class VSPackage : AsyncPackage
     {
-        internal List<Glyph> Glyphs { get; private set; }
-        internal static string AssemblyLocation => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            await Logger.InitializeAsync(this, "Glyphfriend");
-            DeserializeGlyphsFromBinary();
-
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            
-            await GlyphfriendPreferences.InitializeAsync(this);
+
+            await Logger.InitializeAsync(this, "Glyphfriend");
+            await GlyphfriendPreferences.InitializeAsync();
             await ToggleLibraryCommand.InitializeAsync(this);
-        }
-
-        private void DeserializeGlyphsFromBinary()
-        {
-            Glyphs = DeserializeBinaryGlyphs();
-            Logger.Log($"{Glyphs.Count} supported glyphs found.");
-        }
-
-        private List<Glyph> DeserializeBinaryGlyphs()
-        {
-            var binaryPath = Path.Combine(AssemblyLocation, "glyphs.bin");
-            using (var fs = File.Open(binaryPath, FileMode.Open))
-            {
-                var glyphs = Serializer.Deserialize<List<Glyph>>(fs);
-                glyphs.ForEach(g => g.GenerateImage());
-                return glyphs;
-            }
         }
     }
 }

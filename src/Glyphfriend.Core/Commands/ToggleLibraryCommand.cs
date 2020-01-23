@@ -13,10 +13,10 @@ namespace Glyphfriend
         public static async Task InitializeAsync(VSPackage package)
         {
             var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
-            Instance = new ToggleLibraryCommand(package, commandService);
+            Instance = new ToggleLibraryCommand(commandService);
         }
 
-        private ToggleLibraryCommand(VSPackage package, OleMenuCommandService commandService)
+        private ToggleLibraryCommand(OleMenuCommandService commandService)
         {
             foreach (var library in Constants.Libraries.Keys)
             {
