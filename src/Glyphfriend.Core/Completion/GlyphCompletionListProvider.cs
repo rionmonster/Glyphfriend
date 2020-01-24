@@ -11,20 +11,21 @@ namespace Glyphfriend
     [ContentType("htmlx")]
     internal class GlyphCompletionListProvider : BaseHtmlCompletionListProvider
     {
+        private static List<Glyph> Glyphs => Preferences.Glyphs;
+
         public override string CompletionType { get { return CompletionTypes.Values; } }
 
         public override IList<HtmlCompletion> GetEntries(HtmlCompletionContext context)
         {
-            var glyphCompletionItems = new List<HtmlCompletion>();
-
-            // Get the filtered set of enabled glyphs
-            var enabledGlyphs = Preferences.Glyphs.Where(g => g.Enabled);
-            foreach (var glyph in enabledGlyphs)
+            if (Glyphs == null)
             {
-                glyphCompletionItems.Add(CreateItem(glyph.Name, glyph.Image, context.Session));
+                return new List<HtmlCompletion>();
             }
 
-            return glyphCompletionItems;
+            // Get the filtered set of enabled glyphs
+            return Glyphs.Where(g => g.Enabled)
+                         .Select(g => CreateItem(g.Name, g.Image, context.Session))
+                         .ToList();
         }
     }
 }

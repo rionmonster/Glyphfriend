@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Glyphfriend.VS2019.RionWilliams.da26054d-2c11-4d71-87c2-a4fa188a09c2" Version="2.1.0.2" Language="en-US" Publisher="Rion Williams" />
+        <Identity Id="Glyphfriend.VS2019.RionWilliams.da26054d-2c11-4d71-87c2-a4fa188a09c2" Version="2.1.0.3" Language="en-US" Publisher="Rion Williams" />
         <DisplayName>Glyphfriend 2019</DisplayName>
         <Description xml:space="preserve">Glyphfriend is a Visual Studio extension to enhance the existing Intellisense to display preview glyphs for many of the common glyph-based font libraries like Font Awesome, Material Design, Octicons, and more.</Description>
         <MoreInfo>https://github.com/rionmonster/Glyphfriend/</MoreInfo>
