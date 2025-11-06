@@ -1,3 +1,6 @@
+# Archived
+> Glyphfriend is no longer under active development and has been archived. I want to sincerely thank the hundreds of thousands of people who installed and used the extension, as well as the many contributors, testers, and advocates who supported the project along the way.
+
 ![Glyphfriend](https://raw.githubusercontent.com/rionmonster/Glyphfriend/develop/art/glyphfriend-full-logo.png)
 ===========
 
